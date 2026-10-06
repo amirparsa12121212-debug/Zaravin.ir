@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
@@ -25,7 +26,6 @@ a{text-decoration:none;color:inherit}
 img{max-width:100%;display:block}
 .container{width:min(1150px,92%);margin:auto}
 
-/* هدر */
 .header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.97);backdrop-filter:blur(14px);border-bottom:1px solid var(--border)}
 .nav{height:90px;display:flex;align-items:center;justify-content:space-between;gap:24px}
 .brand{display:flex;align-items:center;gap:14px;font-weight:800;font-size:20px;color:var(--teal)}
@@ -39,7 +39,6 @@ nav a:hover{color:var(--orange)}
 .nav-call{background:var(--teal);color:#fff;padding:12px 22px;border-radius:14px;font-weight:800;font-size:15px;transition:.25s;display:flex;align-items:center;gap:8px}
 .nav-call:hover{background:var(--orange);transform:translateY(-2px)}
 
-/* هیرو */
 .hero{padding:70px 0 80px;background:linear-gradient(135deg,var(--teal) 0%,#285859 55%,#193f40 100%);color:#fff;position:relative;overflow:hidden}
 .hero::before{content:"";position:absolute;top:-100px;left:-100px;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(223,120,67,.2),transparent 70%);filter:blur(40px)}
 .hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:50px;align-items:center;position:relative;z-index:2}
@@ -59,7 +58,6 @@ nav a:hover{color:var(--orange)}
 .hero-badges span{display:flex;align-items:center;gap:6px}
 .hero-badges span::before{content:"✓";color:var(--orange-light);font-weight:900}
 
-/* کادر آدرس و تماس داخل هیرو */
 .hero-contact-box{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.22);border-radius:20px;padding:24px 26px;backdrop-filter:blur(10px);display:grid;gap:16px}
 .hero-contact-item{display:flex;align-items:center;gap:16px}
 .hero-contact-icon{width:48px;height:48px;border-radius:14px;background:rgba(223,120,67,.25);display:grid;place-items:center;font-size:22px;flex-shrink:0}
@@ -73,83 +71,70 @@ nav a:hover{color:var(--orange)}
 .hero-logo-box{display:flex;justify-content:center;align-items:center;background:#fff;border-radius:28px;padding:30px;box-shadow:0 25px 80px rgba(0,0,0,.25);transform:rotate(-1deg)}
 .hero-logo-img{width:100%;max-width:340px;height:auto;border-radius:16px}
 
-/* بخش‌ها */
 .section{padding:90px 0}
 .section-title{text-align:center;margin-bottom:50px}
-.section-title > span{color:var(--orange);font-weight:800;font-size:15px;display:inline-block;margin-bottom:8px}
+.section-title > span{color:var(--orange);font-weight:800;font-size:15px;display:inline-block;margin-bottom:8px;letter-spacing:1px}
 .section-title h2{font-size:clamp(28px,4vw,42px);color:var(--teal);font-weight:900;margin-bottom:10px}
 .section-title p{color:var(--text-soft);font-size:16px}
 
-/* کارت‌ها */
-.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.card{background:#fff;padding:34px 28px;border-radius:var(--radius);border:1px solid var(--border);box-shadow:var(--shadow);transition:.3s;position:relative;overflow:hidden;cursor:pointer}
-.card::before{content:"";position:absolute;top:0;right:0;width:100%;height:3px;background:linear-gradient(90deg,var(--orange),transparent);transform:scaleX(0);transform-origin:right;transition:.4s}
-.card:hover{transform:translateY(-8px);box-shadow:0 25px 60px rgba(33,74,75,.18)}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.card{background:#fff;padding:38px 30px;border-radius:24px;border:1px solid var(--border);box-shadow:0 8px 30px rgba(33,74,75,.07);transition:.4s cubic-bezier(.4,0,.2,1);position:relative;overflow:hidden;cursor:pointer}
+.card::before{content:"";position:absolute;top:0;right:0;width:100%;height:4px;background:linear-gradient(90deg,var(--orange),var(--orange-light),transparent);transform:scaleX(0);transform-origin:right;transition:.5s}
+.card::after{content:"";position:absolute;bottom:-60px;left:-60px;width:180px;height:180px;border-radius:50%;background:radial-gradient(circle,rgba(223,120,67,.08),transparent 70%);transition:.5s}
+.card:hover{transform:translateY(-10px);box-shadow:0 30px 70px rgba(33,74,75,.18);border-color:rgba(223,120,67,.3)}
 .card:hover::before{transform:scaleX(1)}
-.card .icon{width:62px;height:62px;border-radius:16px;background:var(--teal-light);color:var(--teal);display:grid;place-items:center;font-size:30px;margin-bottom:18px}
-.card h3{font-size:20px;color:var(--teal);margin-bottom:8px;font-weight:800}
-.card p{color:var(--text-soft);font-size:15px;line-height:1.85}
-.card .more{display:inline-flex;align-items:center;gap:6px;color:var(--orange);font-weight:800;font-size:15px;margin-top:14px}
+.card:hover::after{bottom:-30px;left:-30px}
+.card .icon{width:70px;height:70px;border-radius:20px;background:linear-gradient(135deg,var(--teal-light),#fff);color:var(--teal);display:grid;place-items:center;font-size:34px;margin-bottom:22px;border:1px solid rgba(51,102,103,.1);transition:.4s;position:relative;z-index:2}
+.card:hover .icon{background:linear-gradient(135deg,var(--teal),var(--teal-dark));color:#fff;transform:rotate(-6deg) scale(1.08)}
+.card h3{font-size:21px;color:var(--teal);margin-bottom:10px;font-weight:900;position:relative;z-index:2}
+.card p{color:var(--text-soft);font-size:15px;line-height:1.9;position:relative;z-index:2}
+.card .more{display:inline-flex;align-items:center;gap:8px;color:var(--orange);font-weight:800;font-size:15px;margin-top:18px;position:relative;z-index:2}
 .card .more::after{content:"←";transition:.3s}
-.card:hover .more::after{transform:translateX(-5px)}
+.card:hover .more::after{transform:translateX(-6px)}
 
-/* مراحل کار */
 .steps-section{background:#eef5f4;padding:90px 0}
 .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.step{background:#fff;padding:35px 26px;border-radius:var(--radius);border:1px solid var(--border);text-align:center;transition:.3s;box-shadow:0 10px 30px rgba(33,74,75,.06)}
-.step:hover{border-color:var(--orange);transform:translateY(-5px)}
-.step-num{width:62px;height:62px;border-radius:50%;background:var(--teal);color:#fff;display:grid;place-items:center;font-size:24px;font-weight:900;margin:0 auto 18px}
-.step h3{color:var(--teal);font-size:19px;margin-bottom:8px}
+.step{background:#fff;padding:38px 28px;border-radius:24px;border:1px solid var(--border);text-align:center;transition:.35s;box-shadow:0 10px 30px rgba(33,74,75,.06);position:relative;overflow:hidden}
+.step:hover{border-color:var(--orange);transform:translateY(-8px);box-shadow:0 25px 60px rgba(33,74,75,.15)}
+.step-num{width:66px;height:66px;border-radius:50%;background:linear-gradient(135deg,var(--teal),var(--teal-dark));color:#fff;display:grid;place-items:center;font-size:26px;font-weight:900;margin:0 auto 20px;box-shadow:0 10px 25px rgba(51,102,103,.3)}
+.step h3{color:var(--teal);font-size:20px;margin-bottom:10px;font-weight:800}
 .step p{color:var(--text-soft);font-size:15px}
 
-/* نقل قول */
-.quote-section{padding:90px 0;background:var(--teal);color:#fff;position:relative;overflow:hidden}
+.quote-section{padding:90px 0;background:linear-gradient(135deg,var(--teal),var(--teal-dark));color:#fff;position:relative;overflow:hidden}
 .quote-box{text-align:center;max-width:850px;margin:auto;position:relative;z-index:2}
 .quote-mark{font-size:100px;color:var(--orange-light);height:70px;line-height:.7;font-family:Georgia,serif}
 .quote-box h2{font-size:clamp(28px,4vw,44px);margin:20px 0;color:#fff;font-weight:900}
 .quote-box p{color:#dcebea;font-size:18px;line-height:2}
 
-/* فرم سفارش */
 .order-section{background:#fff}
-.order-form{max-width:640px;margin:auto;background:var(--cream);padding:44px 34px;border-radius:24px;border:1px solid var(--border)}
+.order-form{max-width:680px;margin:auto;background:var(--cream);padding:44px 36px;border-radius:24px;border:1px solid var(--border)}
 .order-form label{display:block;color:var(--teal);font-weight:700;font-size:15px;margin-bottom:8px}
-.order-form input,.order-form select,.order-form textarea{width:100%;padding:15px 18px;background:#fff;border:1px solid var(--border);border-radius:12px;color:var(--text);font-family:inherit;font-size:15px;margin-bottom:22px;transition:.25s;resize:vertical}
+.order-form input,.order-form select,.order-form textarea{width:100%;padding:15px 18px;background:#fff;border:1px solid var(--border);border-radius:12px;color:var(--text);font-family:inherit;font-size:15px;margin-bottom:20px;transition:.25s;resize:vertical}
 .order-form input:focus,.order-form select:focus,.order-form textarea:focus{outline:none;border-color:var(--teal);box-shadow:0 0 0 3px rgba(51,102,103,.1)}
-.order-form textarea{min-height:120px}
+.order-form textarea{min-height:110px}
+.order-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 
-/* QR کد */
-.qr-section{background:#eef5f4}
-.qr-box{display:flex;justify-content:center}
-.qr-placeholder{width:340px;max-width:100%;background:#fff;border:2px dashed rgba(51,102,103,.35);border-radius:24px;padding:40px 24px;text-align:center;transition:.3s}
-.qr-placeholder:hover{border-color:var(--orange);transform:translateY(-4px)}
-.qr-icon{font-size:60px;margin-bottom:16px;line-height:1}
-.qr-placeholder p{color:var(--teal);font-weight:800;font-size:18px;margin-bottom:8px}
-.qr-placeholder small{color:var(--text-soft);font-size:14px;display:block}
-.qr-placeholder img{width:100%;border-radius:14px}
-
-/* تماس */
 .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
 .contact-info{display:grid;gap:14px}
-.contact-item{background:var(--cream);border:1px solid var(--border);border-radius:16px;padding:22px;display:flex;gap:16px;align-items:flex-start;transition:.25s}
-.contact-item:hover{border-color:var(--teal);transform:translateX(-4px)}
-.contact-icon{width:52px;height:52px;border-radius:12px;background:var(--teal-light);color:var(--teal);display:grid;place-items:center;font-size:24px;flex-shrink:0}
+.contact-item{background:var(--cream);border:1px solid var(--border);border-radius:18px;padding:24px;display:flex;gap:18px;align-items:flex-start;transition:.3s}
+.contact-item:hover{border-color:var(--teal);transform:translateX(-6px);box-shadow:0 15px 40px rgba(33,74,75,.1)}
+.contact-icon{width:54px;height:54px;border-radius:14px;background:var(--teal-light);color:var(--teal);display:grid;place-items:center;font-size:24px;flex-shrink:0}
 .contact-item strong{color:var(--teal);display:block;font-size:14px;margin-bottom:4px}
 .contact-item span{color:var(--text);font-size:16px}
 .contact-buttons{display:flex;gap:12px;margin-top:14px;flex-wrap:wrap}
-.contact-buttons a{flex:1;min-width:130px;padding:14px 18px;border-radius:12px;font-weight:800;font-size:15px;display:flex;align-items:center;justify-content:center;gap:8px;transition:.25s}
+.contact-buttons a{flex:1;min-width:130px;padding:15px 18px;border-radius:12px;font-weight:800;font-size:15px;display:flex;align-items:center;justify-content:center;gap:8px;transition:.25s}
 .btn-whatsapp{background:#25D366;color:#fff}
-.btn-whatsapp:hover{background:#1da851;transform:translateY(-2px)}
+.btn-whatsapp:hover{background:#1da851;transform:translateY(-3px);box-shadow:0 12px 25px rgba(37,211,102,.3)}
 .btn-call{background:var(--teal);color:#fff}
-.btn-call:hover{background:var(--orange);transform:translateY(-2px)}
+.btn-call:hover{background:var(--orange);transform:translateY(-3px);box-shadow:0 12px 25px rgba(223,120,67,.3)}
 .map-box{background:linear-gradient(145deg,var(--teal),var(--teal-dark));color:#fff;padding:44px 30px;border-radius:24px;text-align:center;box-shadow:var(--shadow)}
 .map-icon{font-size:56px;margin-bottom:16px}
 .map-box h3{color:#fff;font-size:22px;margin-bottom:10px;font-weight:800}
 .map-box p{color:#dbe9e8;font-size:15px;margin-bottom:24px}
 .map-buttons{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:25px 0}
-.map-buttons a{background:#fff;color:var(--teal);padding:11px 20px;border-radius:12px;font-weight:800;font-size:14px;transition:.25s}
-.map-buttons a:hover{background:var(--orange);color:#fff}
+.map-buttons a{background:#fff;color:var(--teal);padding:13px 24px;border-radius:12px;font-weight:800;font-size:15px;transition:.25s}
+.map-buttons a:hover{background:var(--orange);color:#fff;transform:translateY(-2px)}
 
-/* فوتر */
 footer{background:#173a3b;color:#d9e7e6;padding:36px 0}
 .footer-inner{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
 .footer-brand{display:flex;align-items:center;gap:12px}
@@ -159,25 +144,26 @@ footer{background:#173a3b;color:#d9e7e6;padding:36px 0}
 .footer-links{display:flex;gap:22px;font-size:14px}
 .footer-links a:hover{color:var(--orange-light)}
 
-/* دکمه شناور واتساپ */
 .floating-whatsapp{position:fixed;left:22px;bottom:22px;width:62px;height:62px;border-radius:50%;background:#25D366;color:#fff;display:grid;place-items:center;font-size:30px;box-shadow:0 12px 30px rgba(37,211,102,.45);z-index:60;transition:.3s}
 .floating-whatsapp:hover{transform:scale(1.1)}
 
-/* مودال نمونه‌کار */
-.modal-overlay{display:none;position:fixed;inset:0;background:rgba(15,30,30,.85);backdrop-filter:blur(6px);z-index:100;padding:20px;overflow-y:auto}
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(15,30,30,.9);backdrop-filter:blur(8px);z-index:100;padding:20px;overflow-y:auto}
 .modal-overlay.active{display:flex;align-items:flex-start;justify-content:center}
-.modal-box{background:var(--cream);border-radius:24px;width:min(900px,100%);margin:40px auto;padding:30px;position:relative;box-shadow:0 30px 80px rgba(0,0,0,.5)}
-.modal-close{position:absolute;top:16px;left:16px;width:44px;height:44px;border-radius:50%;background:var(--teal);color:#fff;border:none;font-size:22px;cursor:pointer;display:grid;place-items:center;transition:.25s}
+.modal-box{background:var(--cream);border-radius:28px;width:min(950px,100%);margin:40px auto;padding:36px;position:relative;box-shadow:0 40px 100px rgba(0,0,0,.6);animation:modalIn .35s ease}
+@keyframes modalIn{from{opacity:0;transform:translateY(30px) scale(.95)}to{opacity:1;transform:translateY(0) scale(1)}}
+.modal-close{position:absolute;top:18px;left:18px;width:46px;height:46px;border-radius:50%;background:var(--teal);color:#fff;border:none;font-size:22px;cursor:pointer;display:grid;place-items:center;transition:.25s}
 .modal-close:hover{background:var(--orange);transform:rotate(90deg)}
-.modal-header{text-align:center;margin-bottom:28px;padding-bottom:20px;border-bottom:1px solid var(--border)}
-.modal-header span{color:var(--orange);font-weight:800;font-size:14px}
-.modal-header h2{color:var(--teal);font-size:26px;font-weight:900;margin-top:6px}
-.modal-gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
-.gallery-item{border-radius:16px;overflow:hidden;background:#fff;border:1px solid var(--border);aspect-ratio:4/3;display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--text-soft);gap:6px;transition:.3s}
-.gallery-item:hover{transform:scale(1.02)}
+.modal-header{text-align:center;margin-bottom:30px;padding-bottom:22px;border-bottom:1px solid var(--border)}
+.modal-header span{color:var(--orange);font-weight:800;font-size:14px;letter-spacing:1px}
+.modal-header h2{color:var(--teal);font-size:28px;font-weight:900;margin-top:6px}
+.modal-gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.gallery-item{border-radius:18px;overflow:hidden;background:#fff;border:1px solid var(--border);aspect-ratio:4/3;display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--text-soft);gap:8px;transition:.35s;position:relative}
+.gallery-item::before{content:"";position:absolute;inset:0;background:linear-gradient(135deg,rgba(51,102,103,.05),transparent);opacity:0;transition:.3s}
+.gallery-item:hover{transform:scale(1.03);box-shadow:0 20px 50px rgba(33,74,75,.15);border-color:rgba(223,120,67,.3)}
+.gallery-item:hover::before{opacity:1}
 .gallery-item img{width:100%;height:100%;object-fit:cover}
-.gallery-item .ph-icon{font-size:40px;color:var(--teal);opacity:.5}
-.gallery-item small{font-size:13px;color:var(--text-soft)}
+.gallery-item .ph-icon{font-size:44px;color:var(--teal);opacity:.4}
+.gallery-item small{font-size:13px;color:var(--text-soft);font-weight:600}
 
 @media(max-width:900px){
   nav{display:none}
@@ -201,8 +187,9 @@ footer{background:#173a3b;color:#d9e7e6;padding:36px 0}
   .footer-inner{flex-direction:column;text-align:center}
   .footer-brand{flex-direction:column}
   .order-form{padding:28px 22px}
+  .order-row{grid-template-columns:1fr}
   .floating-whatsapp{width:56px;height:56px;font-size:26px;left:16px;bottom:16px}
-  .modal-box{padding:20px;margin:20px auto}
+  .modal-box{padding:24px;margin:20px auto}
   .modal-gallery{grid-template-columns:1fr}
   .hero-contact-box{padding:18px 18px}
   .hero-map-buttons a{flex:1;justify-content:center;font-size:13px;padding:9px 12px}
@@ -211,7 +198,6 @@ footer{background:#173a3b;color:#d9e7e6;padding:36px 0}
 </head>
 <body>
 
-<!-- هدر -->
 <header class="header">
   <div class="container nav">
     <div class="brand">
@@ -225,14 +211,12 @@ footer{background:#173a3b;color:#d9e7e6;padding:36px 0}
       <a href="#services">خدمات</a>
       <a href="#portfolio">نمونه کار</a>
       <a href="#order">استعلام قیمت</a>
-      <a href="#qr">QR کد</a>
       <a href="#contact">تماس</a>
     </nav>
     <a href="tel:09177638433" class="nav-call">📞 تماس</a>
   </div>
 </header>
 
-<!-- هیرو -->
 <section class="hero">
   <div class="container">
     <div class="hero-grid">
@@ -249,14 +233,12 @@ footer{background:#173a3b;color:#d9e7e6;padding:36px 0}
           <span>ضمانت کیفیت</span>
           <span>قیمت منصفانه</span>
         </div>
-
-        <!-- کادر آدرس و تماس -->
         <div class="hero-contact-box">
           <div class="hero-contact-item">
             <span class="hero-contact-icon">📍</span>
             <div>
               <strong>آدرس</strong>
-              <span>آزادگان ۱۶، خوشکبار زیما</span>
+              <span>آزادگان ۱۶، درب و پنجره زاراوین</span>
             </div>
           </div>
           <div class="hero-contact-item">
@@ -268,11 +250,8 @@ footer{background:#173a3b;color:#d9e7e6;padding:36px 0}
           </div>
           <div class="hero-map-buttons">
             <a href="https://www.google.com/maps/search/?api=1&query=آزادگان+۱۶+خوشکبار+زیما" target="_blank" rel="noopener">🗺 گوگل مپ</a>
-            <a href="https://nshn.ir/search?q=آزادگان+۱۶+خوشکبار+زیما" target="_blank" rel="noopener">🧭 نشان</a>
-            <a href="https://bale.ai/" target="_blank" rel="noopener">💬 بله</a>
           </div>
         </div>
-
       </div>
       <div class="hero-logo-box">
         <img src="images/logo.jpg" alt="لوگو زاراوین" class="hero-logo-img">
@@ -281,7 +260,6 @@ footer{background:#173a3b;color:#d9e7e6;padding:36px 0}
   </div>
 </section>
 
-<!-- خدمات -->
 <section id="services" class="section">
   <div class="container">
     <div class="section-title">
@@ -330,7 +308,6 @@ footer{background:#173a3b;color:#d9e7e6;padding:36px 0}
   </div>
 </section>
 
-<!-- مراحل کار -->
 <section class="steps-section">
   <div class="container">
     <div class="section-title">
@@ -357,7 +334,6 @@ footer{background:#173a3b;color:#d9e7e6;padding:36px 0}
   </div>
 </section>
 
-<!-- نقل قول -->
 <section class="quote-section">
   <div class="container quote-box">
     <div class="quote-mark">”</div>
@@ -366,7 +342,6 @@ footer{background:#173a3b;color:#d9e7e6;padding:36px 0}
   </div>
 </section>
 
-<!-- استعلام قیمت -->
 <section id="order" class="section order-section">
   <div class="container">
     <div class="section-title">
@@ -388,6 +363,17 @@ footer{background:#173a3b;color:#d9e7e6;padding:36px 0}
         <option>سایر</option>
       </select>
 
+      <div class="order-row">
+        <div>
+          <label>طول (سانتی‌متر)</label>
+          <input type="number" id="length" placeholder="مثلاً ۱۲۰" min="0">
+        </div>
+        <div>
+          <label>عرض (سانتی‌متر)</label>
+          <input type="number" id="width" placeholder="مثلاً ۹۰" min="0">
+        </div>
+      </div>
+
       <label>توضیحات</label>
       <textarea id="desc" rows="4" placeholder="مثلاً پنجره پذیرایی، سه لنگه"></textarea>
 
@@ -396,23 +382,6 @@ footer{background:#173a3b;color:#d9e7e6;padding:36px 0}
   </div>
 </section>
 
-<!-- QR کد -->
-<section id="qr" class="section qr-section">
-  <div class="container">
-    <div class="section-title">
-      <span>کیوار کد</span>
-      <h2>QR کد زاراوین</h2>
-      <p>با اسکن این کد، سریع به سایت ما دسترسی پیدا کنید</p>
-    </div>
-    <div class="qr-box">
-      <div class="qr-placeholder" 
-        <img src="images/qr.png" alt="QR کد زاراوین">
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- تماس -->
 <section id="contact" class="section">
   <div class="container">
     <div class="section-title">
@@ -425,7 +394,7 @@ footer{background:#173a3b;color:#d9e7e6;padding:36px 0}
           <div class="contact-icon">📍</div>
           <div>
             <strong>آدرس</strong>
-            <span>آزادگان ۱۶، خوشکبار زیما</span>
+            <span>آزادگان ۱۶، درب و پنجره زاراوین</span>
           </div>
         </div>
         <div class="contact-item">
@@ -443,18 +412,15 @@ footer{background:#173a3b;color:#d9e7e6;padding:36px 0}
       <div class="map-box">
         <div class="map-icon">🗺</div>
         <h3>مسیریابی سریع</h3>
-        <p>برای مشاهده مسیر روی یکی از دکمه‌های زیر کلیک کنید.</p>
+        <p>برای مشاهده مسیر روی دکمه زیر کلیک کنید.</p>
         <div class="map-buttons">
           <a href="https://www.google.com/maps/search/?api=1&query=آزادگان+۱۶+خوشکبار+زیما" target="_blank" rel="noopener">🗺 گوگل مپ</a>
-          <a href="https://nshn.ir/search?q=آزادگان+۱۶+خوشکبار+زیما" target="_blank" rel="noopener">🧭 نشان</a>
-          <a href="https://bale.ai/" target="_blank" rel="noopener">💬 بله</a>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- فوتر -->
 <footer>
   <div class="container footer-inner">
     <div class="footer-brand">
@@ -468,16 +434,13 @@ footer{background:#173a3b;color:#d9e7e6;padding:36px 0}
       <a href="#services">خدمات</a>
       <a href="#portfolio">نمونه کار</a>
       <a href="#order">استعلام قیمت</a>
-      <a href="#qr">QR کد</a>
       <a href="#contact">تماس</a>
     </div>
   </div>
 </footer>
 
-<!-- دکمه شناور واتساپ -->
 <a href="https://wa.me/989177638433" class="floating-whatsapp" target="_blank" rel="noopener" aria-label="واتساپ">💬</a>
 
-<!-- مودال نمونه‌کار -->
 <div class="modal-overlay" id="modal" onclick="if(event.target===this)closeModal()">
   <div class="modal-box">
     <button class="modal-close" onclick="closeModal()">✕</button>
@@ -485,4 +448,14 @@ footer{background:#173a3b;color:#d9e7e6;padding:36px 0}
       <span>نمونه کارها</span>
       <h2 id="modalTitle">عنوان</h2>
     </div>
-    <div class="modal-gallery"
+    <div class="modal-gallery" id="modalGallery"></div>
+  </div>
+</div>
+
+<script>
+const portfolios = {
+  aluminum: { title: "پنجره آلومینیوم", images: [] },
+  upvc: { title: "پنجره UPVC", images: [] },
+  door: { title: "درب ضد سرقت", images: [] },
+  glasswall: { title: "نمای شیشه‌ای", images: [] },
+  glassdoor:
