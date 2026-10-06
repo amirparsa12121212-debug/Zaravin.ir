@@ -256,7 +256,7 @@ footer{background:#173a3b;color:#d9e7e6;padding:36px 0}
             <span class="hero-contact-icon">📍</span>
             <div>
               <strong>آدرس</strong>
-              <span>آزادگان ۱۶، درب و پنجره زاراوین</span>
+              <span>آزادگان ۱۶، خوشکبار زیما</span>
             </div>
           </div>
           <div class="hero-contact-item">
@@ -267,8 +267,8 @@ footer{background:#173a3b;color:#d9e7e6;padding:36px 0}
             </div>
           </div>
           <div class="hero-map-buttons">
-            <a href="https://www.google.com/maps/search/?api=1&query=آزادگان+۱۶+درب+و+پنجره+زاراوین" target="_blank" rel="noopener">🗺 گوگل مپ</a>
-            <a href="https://nshn.ir/" target="_blank" rel="noopener">🧭 نشان</a>
+            <a href="https://www.google.com/maps/search/?api=1&query=آزادگان+۱۶+خوشکبار+زیما" target="_blank" rel="noopener">🗺 گوگل مپ</a>
+            <a href="https://nshn.ir/search?q=آزادگان+۱۶+خوشکبار+زیما" target="_blank" rel="noopener">🧭 نشان</a>
             <a href="https://bale.ai/" target="_blank" rel="noopener">💬 بله</a>
           </div>
         </div>
@@ -427,7 +427,7 @@ footer{background:#173a3b;color:#d9e7e6;padding:36px 0}
           <div class="contact-icon">📍</div>
           <div>
             <strong>آدرس</strong>
-            <span>آزادگان ۱۶، درب و پنجره زاراوین</span>
+            <span>آزادگان ۱۶، خوشکبار زیما</span>
           </div>
         </div>
         <div class="contact-item">
@@ -447,8 +447,8 @@ footer{background:#173a3b;color:#d9e7e6;padding:36px 0}
         <h3>مسیریابی سریع</h3>
         <p>برای مشاهده مسیر روی یکی از دکمه‌های زیر کلیک کنید.</p>
         <div class="map-buttons">
-          <a href="https://www.google.com/maps/search/?api=1&query=آزادگان+۱۶+درب+و+پنجره+زاراوین" target="_blank" rel="noopener">🗺 گوگل مپ</a>
-          <a href="https://nshn.ir/" target="_blank" rel="noopener">🧭 نشان</a>
+          <a href="https://www.google.com/maps/search/?api=1&query=آزادگان+۱۶+خوشکبار+زیما" target="_blank" rel="noopener">🗺 گوگل مپ</a>
+          <a href="https://nshn.ir/search?q=آزادگان+۱۶+خوشکبار+زیما" target="_blank" rel="noopener">🧭 نشان</a>
           <a href="https://bale.ai/" target="_blank" rel="noopener">💬 بله</a>
         </div>
       </div>
@@ -487,62 +487,4 @@ footer{background:#173a3b;color:#d9e7e6;padding:36px 0}
       <span>نمونه کارها</span>
       <h2 id="modalTitle">عنوان</h2>
     </div>
-    <div class="modal-gallery" id="modalGallery"></div>
-  </div>
-</div>
-
-<script>
-const portfolios = {
-  aluminum: { title: "پنجره آلومینیوم", images: [] },
-  upvc: { title: "پنجره UPVC", images: [] },
-  door: { title: "درب ضد سرقت", images: [] },
-  glasswall: { title: "نمای شیشه‌ای", images: [] },
-  glassdoor: { title: "درب شیشه‌ای", images: [] }
-};
-
-function openModal(key){
-  const data = portfolios[key];
-  if(!data) return;
-  document.getElementById("modalTitle").textContent = data.title;
-  const gallery = document.getElementById("modalGallery");
-  gallery.innerHTML = "";
-  for(let i = 0; i < 4; i++){
-    const item = document.createElement("div");
-    item.className = "gallery-item";
-    if(data.images[i]){
-      item.innerHTML = `<img src="${data.images[i]}" alt="${data.title}">`;
-    } else {
-      item.innerHTML = `<div class="ph-icon">🖼</div><small>${data.title} - عکس ${i+1}</small>`;
-    }
-    gallery.appendChild(item);
-  }
-  document.getElementById("modal").classList.add("active");
-  document.body.style.overflow = "hidden";
-}
-
-function closeModal(){
-  document.getElementById("modal").classList.remove("active");
-  document.body.style.overflow = "";
-}
-
-document.addEventListener("keydown", (e) => {
-  if(e.key === "Escape") closeModal();
-});
-
-function sendToWhatsapp(e){
-  e.preventDefault();
-  const name = document.getElementById("name").value;
-  const type = document.getElementById("type").value;
-  const desc = document.getElementById("desc").value;
-  const message = `سلام، درخواست استعلام قیمت:%0A👤 نام: ${name}%0A🔧 نوع کار: ${type}%0A📝 توضیحات: ${desc}`;
-  window.open(`https://wa.me/989177638433?text=${message}`, "_blank");
-}
-
-document.addEventListener("DOMContentLoaded", () => {
-  const year = new Intl.DateTimeFormat("fa-IR", { year: "numeric" }).format(new Date());
-  const footerP = document.querySelector("footer .footer-inner div p");
-  if(footerP) footerP.textContent = `© ${year} - تمامی حقوق محفوظ است`;
-});
-</script>
-</body>
-          </html>
+    <div class="modal-gallery"
