@@ -8,12 +8,10 @@
 <style>
 :root{--teal:#336667;--teal-dark:#1f3f40;--orange:#df7843;--orange-dark:#c45f2a;--cream:#f8fbfa;--text:#0f2a2b;--text-soft:#5e7071;--border:rgba(51,102,103,.12)}
 *{box-sizing:border-box;margin:0;padding:0;scroll-behavior:smooth}
-body{font-family:Vazirmatn,Tahoma,sans-serif;color:var(--text);background:var(--cream);line-height:1.85;overflow-x:hidden}
+body{font-family:Vazirmatn,Tahoma,sans-serif;color:var(--text);background:var(--cream);line-height:1.8;overflow-x:hidden}
 a{text-decoration:none;color:inherit}
 img{max-width:100%;display:block}
 .container{width:min(1140px,92%);margin:auto}
-
-/* هدر */
 .header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
 .nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:16px}
 .brand{display:flex;align-items:center;gap:10px}
@@ -23,12 +21,8 @@ img{max-width:100%;display:block}
 nav{display:flex;gap:22px;font-weight:700;font-size:14px}
 nav a{color:var(--text);position:relative;padding:5px 0;transition:.3s}
 nav a:hover{color:var(--orange)}
-nav a::after{content:"";position:absolute;bottom:0;right:0;width:0;height:2px;background:var(--orange);transition:.3s}
-nav a:hover::after{width:100%}
 .nav-call{background:var(--teal);color:#fff;padding:10px 18px;border-radius:11px;font-weight:800;font-size:13px}
 .nav-call:hover{background:var(--orange)}
-
-/* هیرو */
 .hero{padding:60px 0 70px;background:linear-gradient(135deg,#1f3f40 0%,#2a5758 55%,#1a3536 100%);color:#fff;position:relative;overflow:hidden}
 .hero::before{content:"";position:absolute;top:-100px;right:-100px;width:350px;height:350px;border-radius:50%;background:radial-gradient(circle,rgba(223,120,67,.25),transparent 65%);filter:blur(40px)}
 .hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center;position:relative;z-index:2}
@@ -51,20 +45,16 @@ nav a:hover::after{width:100%}
 .hero-contact-icon{width:40px;height:40px;border-radius:11px;background:rgba(223,120,67,.2);border:1px solid rgba(223,120,67,.3);display:grid;place-items:center;font-size:18px;flex-shrink:0}
 .hero-contact-item strong{display:block;color:#f3a06f;font-size:11px;font-weight:800}
 .hero-contact-item span{color:#fff;font-size:14px;font-weight:600}
-.hero-map-buttons a{background:rgba(255,255,255,.12);color:#fff;padding:9px 16px;border-radius:10px;font-weight:700;font-size:13px;border:1px solid rgba(255,255,255,.2);display:inline-flex;align-items:center;gap:6px;transition:.3s}
+.hero-map-buttons a{background:rgba(255,255,255,.12);color:#fff;padding:9px 16px;border-radius:10px;font-weight:700;font-size:13px;border:1px solid rgba(255,255,255,.2);display:inline-flex;align-items:center;gap:6px}
 .hero-map-buttons a:hover{background:var(--orange);border-color:var(--orange)}
 .hero-logo-box{background:#fff;border-radius:22px;padding:24px;box-shadow:0 25px 60px rgba(0,0,0,.3);transform:rotate(-1.5deg);transition:.4s}
 .hero-logo-box:hover{transform:rotate(0)}
 .hero-logo-img{width:100%;max-width:240px;margin:auto;border-radius:14px}
-
-/* بخش‌ها */
 .section{padding:70px 0}
 .section-title{text-align:center;margin-bottom:40px}
 .section-title > span{color:var(--orange);font-weight:800;font-size:12px;letter-spacing:3px;display:inline-block;margin-bottom:8px}
 .section-title h2{font-size:clamp(24px,3.5vw,34px);color:var(--teal);font-weight:900;margin-bottom:8px;letter-spacing:-.5px}
 .section-title p{color:var(--text-soft);font-size:14px}
-
-/* کارت‌های خدمات */
 .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
 .card{position:relative;height:200px;border-radius:16px;overflow:hidden;cursor:pointer;transition:.4s;background:linear-gradient(135deg,#1f3f40,#336667)}
 .card:hover{transform:translateY(-6px);box-shadow:0 20px 45px rgba(33,74,75,.18)}
@@ -76,8 +66,6 @@ nav a:hover::after{width:100%}
 .card-desc{color:#e8f1f0;font-size:11px;line-height:1.6;margin-bottom:10px;max-width:180px}
 .card-btn{display:inline-flex;align-items:center;gap:5px;background:var(--orange);color:#fff;padding:6px 12px;border-radius:999px;font-weight:800;font-size:10px;width:fit-content;transition:.3s}
 .card:hover .card-btn{background:var(--orange-dark);transform:translateX(-3px)}
-
-/* مراحل */
 .steps-section{background:#eef5f4;padding:70px 0}
 .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
 .step{background:#fff;padding:30px 22px;border-radius:18px;border:1px solid var(--border);text-align:center;transition:.4s}
@@ -85,15 +73,11 @@ nav a:hover::after{width:100%}
 .step-num{width:56px;height:56px;border-radius:50%;background:var(--teal);color:#fff;display:grid;place-items:center;font-size:22px;font-weight:900;margin:0 auto 16px}
 .step h3{color:var(--teal);font-size:16px;margin-bottom:6px;font-weight:900}
 .step p{color:var(--text-soft);font-size:13px}
-
-/* نقل قول */
 .quote-section{padding:70px 0;background:linear-gradient(135deg,var(--teal-dark),var(--teal));color:#fff;text-align:center}
 .quote-box{max-width:700px;margin:auto}
 .quote-mark{font-size:70px;color:#f3a06f;height:50px;line-height:.7;font-family:Georgia,serif;opacity:.6}
 .quote-box h2{font-size:clamp(22px,3.5vw,32px);margin:16px 0;font-weight:900}
 .quote-box p{color:#dcebea;font-size:14px;line-height:1.9}
-
-/* فرم */
 .order-section{background:#fff}
 .order-form{max-width:600px;margin:auto;background:var(--cream);padding:34px 28px;border-radius:20px;border:1px solid var(--border)}
 .order-form label{display:block;color:var(--teal);font-weight:800;font-size:13px;margin-bottom:6px}
@@ -101,8 +85,6 @@ nav a:hover::after{width:100%}
 .order-form input:focus,.order-form select:focus,.order-form textarea:focus{outline:none;border-color:var(--orange);box-shadow:0 0 0 3px rgba(223,120,67,.12)}
 .order-form textarea{min-height:90px}
 .order-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-
-/* تماس */
 .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start}
 .contact-info{display:grid;gap:10px}
 .contact-item{background:var(--cream);border:1px solid var(--border);border-radius:14px;padding:18px;display:flex;gap:12px;align-items:flex-start;transition:.3s}
@@ -122,8 +104,6 @@ nav a:hover::after{width:100%}
 .map-box p{color:#dbe9e8;font-size:13px;margin-bottom:18px}
 .map-buttons a{background:#fff;color:var(--teal);padding:11px 20px;border-radius:10px;font-weight:800;font-size:13px;display:inline-flex;align-items:center;gap:6px}
 .map-buttons a:hover{background:var(--orange);color:#fff}
-
-/* فوتر */
 footer{background:#0f2a2b;color:#d9e7e6;padding:26px 0}
 .footer-inner{display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap}
 .footer-brand{display:flex;align-items:center;gap:10px}
@@ -132,12 +112,8 @@ footer{background:#0f2a2b;color:#d9e7e6;padding:26px 0}
 .footer-inner p{font-size:11px;color:#a9c1c0}
 .footer-links{display:flex;gap:16px;font-size:13px;font-weight:600}
 .footer-links a:hover{color:#f3a06f}
-
-/* واتساپ شناور */
 .floating-whatsapp{position:fixed;left:18px;bottom:18px;width:54px;height:54px;border-radius:50%;background:#25D366;color:#fff;display:grid;place-items:center;font-size:24px;box-shadow:0 10px 26px rgba(37,211,102,.45);z-index:60;transition:.3s}
 .floating-whatsapp:hover{transform:scale(1.1)}
-
-/* مودال */
 .modal-overlay{display:none;position:fixed;inset:0;background:rgba(10,25,25,.94);backdrop-filter:blur(10px);z-index:100;padding:16px;overflow-y:auto}
 .modal-overlay.active{display:flex;align-items:flex-start;justify-content:center}
 .modal-box{background:#fff;border-radius:22px;width:min(950px,100%);margin:30px auto;padding:28px;position:relative;box-shadow:0 30px 80px rgba(0,0,0,.6)}
@@ -155,45 +131,17 @@ footer{background:#0f2a2b;color:#d9e7e6;padding:26px 0}
 .gallery-item img{width:100%;height:100%;object-fit:cover}
 .gallery-item .ph-icon{font-size:26px;color:var(--teal);opacity:.35}
 .gallery-item small{font-size:10px;color:var(--text-soft);font-weight:700}
-
-/* ریسپانسیو */
 @media(max-width:1000px){.modal-gallery{grid-template-columns:repeat(3,1fr)}}
-@media(max-width:900px){
-  nav{display:none}
-  .hero-grid{grid-template-columns:1fr;gap:32px}
-  .hero-logo-box{max-width:340px;margin:auto}
-  .cards,.steps{grid-template-columns:1fr 1fr}
-  .contact-grid{grid-template-columns:1fr}
-}
-@media(max-width:600px){
-  .nav{height:64px}
-  .brand-logo{width:42px;height:42px}
-  .brand-text strong{font-size:15px}
-  .nav-call{padding:8px 13px;font-size:12px}
-  .hero{padding:40px 0}
-  .hero h1{font-size:30px}
-  .hero-buttons .btn{flex:1;justify-content:center}
-  .cards,.steps{grid-template-columns:1fr}
-  .section{padding:50px 0}
-  .footer-inner{flex-direction:column;text-align:center}
-  .order-form{padding:24px 18px}
-  .order-row{grid-template-columns:1fr}
-  .floating-whatsapp{width:48px;height:48px;font-size:22px;left:12px;bottom:12px}
-  .modal-box{padding:20px 14px;margin:14px auto}
-  .modal-gallery{grid-template-columns:repeat(2,1fr)}
-}
+@media(max-width:900px){nav{display:none}.hero-grid{grid-template-columns:1fr;gap:32px}.hero-logo-box{max-width:340px;margin:auto}.cards,.steps{grid-template-columns:1fr 1fr}.contact-grid{grid-template-columns:1fr}}
+@media(max-width:600px){.nav{height:64px}.brand-logo{width:42px;height:42px}.brand-text strong{font-size:15px}.nav-call{padding:8px 13px;font-size:12px}.hero{padding:40px 0}.hero h1{font-size:30px}.hero-buttons .btn{flex:1;justify-content:center}.cards,.steps{grid-template-columns:1fr}.section{padding:50px 0}.footer-inner{flex-direction:column;text-align:center}.order-form{padding:24px 18px}.order-row{grid-template-columns:1fr}.floating-whatsapp{width:48px;height:48px;font-size:22px;left:12px;bottom:12px}.modal-box{padding:20px 14px;margin:14px auto}.modal-gallery{grid-template-columns:repeat(2,1fr)}}
 </style>
 </head>
 <body>
-
-<header class="header">
+  <header class="header">
   <div class="container nav">
     <div class="brand">
       <img src="images/logo.jpg" alt="لوگو زاراوین" class="brand-logo">
-      <div class="brand-text">
-        <strong>زاراوین</strong>
-        <small>درب و پنجره</small>
-      </div>
+      <div class="brand-text"><strong>زاراوین</strong><small>درب و پنجره</small></div>
     </div>
     <nav>
       <a href="#services">خدمات</a>
@@ -314,21 +262,9 @@ footer{background:#0f2a2b;color:#d9e7e6;padding:26px 0}
       <h2>مراحل سفارش</h2>
     </div>
     <div class="steps">
-      <div class="step">
-        <div class="step-num">۱</div>
-        <h3>اندازه‌گیری</h3>
-        <p>بازدید و برداشت دقیق ابعاد</p>
-      </div>
-      <div class="step">
-        <div class="step-num">۲</div>
-        <h3>ساخت در کارگاه</h3>
-        <p>برش، مونتاژ و یراق‌کشی</p>
-      </div>
-      <div class="step">
-        <div class="step-num">۳</div>
-        <h3>نصب</h3>
-        <p>نصب با آب‌بندی و تنظیم</p>
-      </div>
+      <div class="step"><div class="step-num">۱</div><h3>اندازه‌گیری</h3><p>بازدید و برداشت دقیق ابعاد</p></div>
+      <div class="step"><div class="step-num">۲</div><h3>ساخت در کارگاه</h3><p>برش، مونتاژ و یراق‌کشی</p></div>
+      <div class="step"><div class="step-num">۳</div><h3>نصب</h3><p>نصب با آب‌بندی و تنظیم</p></div>
     </div>
   </div>
 </section>
@@ -361,14 +297,8 @@ footer{background:#0f2a2b;color:#d9e7e6;padding:26px 0}
         <option>سایر</option>
       </select>
       <div class="order-row">
-        <div>
-          <label>طول (سانتی‌متر)</label>
-          <input type="number" id="length" placeholder="۱۲۰" min="0">
-        </div>
-        <div>
-          <label>عرض (سانتی‌متر)</label>
-          <input type="number" id="width" placeholder="۹۰" min="0">
-        </div>
+        <div><label>طول (سانتی‌متر)</label><input type="number" id="length" placeholder="۱۲۰" min="0"></div>
+        <div><label>عرض (سانتی‌متر)</label><input type="number" id="width" placeholder="۹۰" min="0"></div>
       </div>
       <label>توضیحات</label>
       <textarea id="desc" rows="3" placeholder="مثلاً پنجره پذیرایی سه لنگه"></textarea>
@@ -414,10 +344,7 @@ footer{background:#0f2a2b;color:#d9e7e6;padding:26px 0}
   <div class="container footer-inner">
     <div class="footer-brand">
       <img src="images/logo.jpg" alt="لوگو زاراوین" class="footer-logo">
-      <div>
-        <strong>زاراوین</strong>
-        <p>© ۱۴۰۳ - تمامی حقوق محفوظ است</p>
-      </div>
+      <div><strong>زاراوین</strong><p>© ۱۴۰۳ - تمامی حقوق محفوظ است</p></div>
     </div>
     <div class="footer-links">
       <a href="#services">خدمات</a>
@@ -445,38 +372,15 @@ footer{background:#0f2a2b;color:#d9e7e6;padding:26px 0}
 </div>
 
 <script>
-const portfolios = {
-  aluminum:{title:"پنجره آلومینیوم",images:[]},
-  upvc:{title:"پنجره UPVC",images:[]},
-  door:{title:"درب ضد سرقت",images:[]},
-  glasswall:{title:"نمای شیشه‌ای",images:[]},
-  glassdoor:{title:"درب شیشه‌ای",images:[]}
-};
+const portfolios={aluminum:{title:"پنجره آلومینیوم",images:[]},upvc:{title:"پنجره UPVC",images:[]},door:{title:"درب ضد سرقت",images:[]},glasswall:{title:"نمای شیشه‌ای",images:[]},glassdoor:{title:"درب شیشه‌ای",images:[]}};
 let currentKey=null;
-function openModal(key){
-  const d=portfolios[key]; if(!d)return;
-  currentKey=key;
-  document.getElementById("modalTitle").textContent=d.title;
-  renderGallery();
-  document.getElementById("modal").classList.add("active");
-  document.body.style.overflow="hidden";
-}
-function renderGallery(){
-  const d=portfolios[currentKey];
-  const g=document.getElementById("modalGallery");
-  g.innerHTML="";
-  for(let i=0;i<18;i++){
-    const it=document.createElement("div");
-    it.className="gallery-item";
-    it.innerHTML=d.images[i]
-      ?`<img src="${d.images[i]}" alt="${d.title}">`
-      :`<div class="ph-icon">🖼</div><small>نمونه ${i+1}</small>`;
-    g.appendChild(it);
-  }
-}
-function addWork(e){
-  const f=e.target.files[0]; if(!f)return;
-  const r=new FileReader();
-  r.onload=(ev)=>{
-    const d=portfolios[currentKey];
-    if(d
+function openModal(key){const d=portfolios[key];if(!d)return;currentKey=key;document.getElementById("modalTitle").textContent=d.title;renderGallery();document.getElementById("modal").classList.add("active");document.body.style.overflow="hidden";}
+function renderGallery(){const d=portfolios[currentKey];const g=document.getElementById("modalGallery");g.innerHTML="";for(let i=0;i<18;i++){const it=document.createElement("div");it.className="gallery-item";it.innerHTML=d.images[i]?`<img src="${d.images[i]}" alt="${d.title}">`:`<div class="ph-icon">🖼</div><small>نمونه ${i+1}</small>`;g.appendChild(it);}}
+function addWork(e){const f=e.target.files[0];if(!f)return;const r=new FileReader();r.onload=(ev)=>{const d=portfolios[currentKey];if(d.images.length<18){d.images.push(ev.target.result);renderGallery();}else{alert("حداکثر ۱۸ نمونه‌کار");}};r.readAsDataURL(f);e.target.value="";}
+function closeModal(){document.getElementById("modal").classList.remove("active");document.body.style.overflow="";}
+document.addEventListener("keydown",(e)=>{if(e.key==="Escape")closeModal();});
+function sendToWhatsapp(e){e.preventDefault();const name=document.getElementById("name").value;const type=document.getElementById("type").value;const length=document.getElementById("length").value||"—";const width=document.getElementById("width").value||"—";const desc=document.getElementById("desc").value||"—";const message=`سلام، از کاتالوگ زاراوین برای استعلام قیمت پیام می‌دم.%0A%0A👤 نام: ${name}%0A🔧 نوع کار: ${type}%0A📏 طول: ${length} سانتی‌متر%0A📐 عرض: ${width} سانتی‌متر%0A📝 توضیحات: ${desc}`;window.open(`https://wa.me/989177638433?text=${message}`,"_blank");}
+document.addEventListener("DOMContentLoaded",()=>{const year=new Intl.DateTimeFormat("fa-IR",{year:"numeric"}).format(new Date());const footerP=document.querySelector("footer .footer-inner div p");if(footerP)footerP.textContent=`© ${year} - تمامی حقوق محفوظ است`;});
+</script>
+</body>
+</html>
