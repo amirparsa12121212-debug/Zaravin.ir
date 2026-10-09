@@ -1,386 +1,245 @@
-<!DOCTYPE html>
-<html lang="fa" dir="rtl">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>زاراوین | درب و پنجره آلومینیومی</title>
-<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+<!-- بخش استعلام قیمت زاراوین -->
+<section id="price" class="section">
+  <div class="container">
+    <div class="section-heading">
+      <span class="eyebrow">PRICE INQUIRY</span>
+      <h2>استعلام قیمت <span class="accent">زاراوین</span></h2>
+      <p>نوع محصول و ابعاد موردنظر خود را وارد کنید.</p>
+    </div>
+
+    <div class="price-box">
+      <form id="priceForm">
+        <div class="field">
+          <label for="product">نوع محصول</label>
+          <select id="product" required>
+            <option value="">انتخاب کنید</option>
+            <option value="پنجره UPVC">پنجره UPVC</option>
+            <option value="درب UPVC">درب UPVC</option>
+            <option value="پنجره آلومینیومی">پنجره آلومینیومی</option>
+            <option value="درب و پنجره سفارشی">درب و پنجره سفارشی</option>
+          </select>
+        </div>
+
+        <div class="dimensions">
+          <div class="field">
+            <label for="width">عرض (سانتی‌متر)</label>
+            <input
+              id="width"
+              type="number"
+              min="1"
+              max="2000"
+              placeholder="مثلاً 120"
+              required
+            >
+          </div>
+
+          <div class="field">
+            <label for="height">طول / ارتفاع (سانتی‌متر)</label>
+            <input
+              id="height"
+              type="number"
+              min="1"
+              max="2000"
+              placeholder="مثلاً 150"
+              required
+            >
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="quantity">تعداد</label>
+          <input
+            id="quantity"
+            type="number"
+            min="1"
+            max="1000"
+            value="1"
+            required
+          >
+        </div>
+
+        <div class="field">
+          <label for="details">توضیحات (اختیاری)</label>
+          <textarea
+            id="details"
+            rows="3"
+            placeholder="رنگ، نوع شیشه یا توضیحات دیگر..."
+          ></textarea>
+        </div>
+
+        <div class="price-summary">
+          <span>مساحت تقریبی هر محصول</span>
+          <strong id="area">۰ متر مربع</strong>
+        </div>
+
+        <button class="btn btn-orange price-submit" type="submit">
+          ارسال درخواست استعلام قیمت
+        </button>
+
+        <p class="price-note">
+          قیمت نهایی پس از بررسی مشخصات توسط زاراوین اعلام می‌شود.
+        </p>
+      </form>
+    </div>
+  </div>
+</section>
+
 <style>
-:root{--teal:#336667;--teal-dark:#1f3f40;--orange:#df7843;--orange-dark:#c45f2a;--cream:#f8fbfa;--text:#0f2a2b;--text-soft:#5e7071;--border:rgba(51,102,103,.12)}
-*{box-sizing:border-box;margin:0;padding:0;scroll-behavior:smooth}
-body{font-family:Vazirmatn,Tahoma,sans-serif;color:var(--text);background:var(--cream);line-height:1.8;overflow-x:hidden}
-a{text-decoration:none;color:inherit}
-img{max-width:100%;display:block}
-.container{width:min(1140px,92%);margin:auto}
-.header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
-.nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:16px}
-.brand{display:flex;align-items:center;gap:10px}
-.brand-logo{width:52px;height:52px;border-radius:12px;object-fit:cover;border:1px solid var(--border);background:#fff;padding:3px}
-.brand-text strong{display:block;font-size:17px;color:var(--teal);font-weight:900}
-.brand-text small{display:block;font-size:10px;color:var(--text-soft);font-weight:600}
-nav{display:flex;gap:22px;font-weight:700;font-size:14px}
-nav a{color:var(--text);position:relative;padding:5px 0;transition:.3s}
-nav a:hover{color:var(--orange)}
-.nav-call{background:var(--teal);color:#fff;padding:10px 18px;border-radius:11px;font-weight:800;font-size:13px}
-.nav-call:hover{background:var(--orange)}
-.hero{padding:60px 0 70px;background:linear-gradient(135deg,#1f3f40 0%,#2a5758 55%,#1a3536 100%);color:#fff;position:relative;overflow:hidden}
-.hero::before{content:"";position:absolute;top:-100px;right:-100px;width:350px;height:350px;border-radius:50%;background:radial-gradient(circle,rgba(223,120,67,.25),transparent 65%);filter:blur(40px)}
-.hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center;position:relative;z-index:2}
-.badge{display:inline-block;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.22);color:#fff;padding:6px 16px;border-radius:999px;font-size:12px;font-weight:700}
-.hero h1{font-size:clamp(34px,5.5vw,56px);line-height:1.15;margin:18px 0 14px;font-weight:900;letter-spacing:-1px}
-.hero h1 span{color:#f3a06f}
-.hero p{font-size:15px;color:#e9f2f1;max-width:520px;margin-bottom:24px}
-.hero-buttons{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:22px}
-.btn{padding:13px 22px;border-radius:12px;font-weight:800;font-size:14px;display:inline-flex;align-items:center;gap:6px;transition:.3s;border:none;cursor:pointer;font-family:inherit}
-.btn.primary{background:#fff;color:var(--teal)}
-.btn.primary:hover{background:var(--orange);color:#fff;transform:translateY(-2px)}
-.btn.outline{background:rgba(255,255,255,.08);color:#fff;border:1.5px solid rgba(255,255,255,.25)}
-.btn.outline:hover{background:rgba(255,255,255,.18)}
-.btn.submit{background:var(--teal);color:#fff;width:100%;padding:15px;justify-content:center;font-size:15px}
-.btn.submit:hover{background:var(--orange)}
-.hero-badges{display:flex;gap:20px;flex-wrap:wrap;color:#d7e8e7;font-size:13px;margin-bottom:24px}
-.hero-badges span::before{content:"✓ ";color:#f3a06f;font-weight:900}
-.hero-contact-box{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:16px;padding:18px 20px;display:grid;gap:12px}
-.hero-contact-item{display:flex;align-items:center;gap:12px}
-.hero-contact-icon{width:40px;height:40px;border-radius:11px;background:rgba(223,120,67,.2);border:1px solid rgba(223,120,67,.3);display:grid;place-items:center;font-size:18px;flex-shrink:0}
-.hero-contact-item strong{display:block;color:#f3a06f;font-size:11px;font-weight:800}
-.hero-contact-item span{color:#fff;font-size:14px;font-weight:600}
-.hero-map-buttons a{background:rgba(255,255,255,.12);color:#fff;padding:9px 16px;border-radius:10px;font-weight:700;font-size:13px;border:1px solid rgba(255,255,255,.2);display:inline-flex;align-items:center;gap:6px}
-.hero-map-buttons a:hover{background:var(--orange);border-color:var(--orange)}
-.hero-logo-box{background:#fff;border-radius:22px;padding:24px;box-shadow:0 25px 60px rgba(0,0,0,.3);transform:rotate(-1.5deg);transition:.4s}
-.hero-logo-box:hover{transform:rotate(0)}
-.hero-logo-img{width:100%;max-width:240px;margin:auto;border-radius:14px}
-.section{padding:70px 0}
-.section-title{text-align:center;margin-bottom:40px}
-.section-title > span{color:var(--orange);font-weight:800;font-size:12px;letter-spacing:3px;display:inline-block;margin-bottom:8px}
-.section-title h2{font-size:clamp(24px,3.5vw,34px);color:var(--teal);font-weight:900;margin-bottom:8px;letter-spacing:-.5px}
-.section-title p{color:var(--text-soft);font-size:14px}
-.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-.card{position:relative;height:200px;border-radius:16px;overflow:hidden;cursor:pointer;transition:.4s;background:linear-gradient(135deg,#1f3f40,#336667)}
-.card:hover{transform:translateY(-6px);box-shadow:0 20px 45px rgba(33,74,75,.18)}
-.card::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#1f3f40 0%,rgba(31,63,64,.85) 50%,rgba(31,63,64,.15) 100%);z-index:2}
-.card-content{position:absolute;inset:0;z-index:3;padding:18px 16px;display:flex;flex-direction:column;justify-content:flex-end;color:#fff}
-.card-tag{color:#f3a06f;font-size:9px;font-weight:800;letter-spacing:2px;margin-bottom:3px}
-.card-title{font-size:17px;font-weight:900;line-height:1.2;margin-bottom:7px}
-.card-line{width:32px;height:3px;border-radius:3px;background:var(--orange);margin-bottom:7px}
-.card-desc{color:#e8f1f0;font-size:11px;line-height:1.6;margin-bottom:10px;max-width:180px}
-.card-btn{display:inline-flex;align-items:center;gap:5px;background:var(--orange);color:#fff;padding:6px 12px;border-radius:999px;font-weight:800;font-size:10px;width:fit-content;transition:.3s}
-.card:hover .card-btn{background:var(--orange-dark);transform:translateX(-3px)}
-.steps-section{background:#eef5f4;padding:70px 0}
-.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.step{background:#fff;padding:30px 22px;border-radius:18px;border:1px solid var(--border);text-align:center;transition:.4s}
-.step:hover{transform:translateY(-6px);box-shadow:0 20px 45px rgba(33,74,75,.12)}
-.step-num{width:56px;height:56px;border-radius:50%;background:var(--teal);color:#fff;display:grid;place-items:center;font-size:22px;font-weight:900;margin:0 auto 16px}
-.step h3{color:var(--teal);font-size:16px;margin-bottom:6px;font-weight:900}
-.step p{color:var(--text-soft);font-size:13px}
-.quote-section{padding:70px 0;background:linear-gradient(135deg,var(--teal-dark),var(--teal));color:#fff;text-align:center}
-.quote-box{max-width:700px;margin:auto}
-.quote-mark{font-size:70px;color:#f3a06f;height:50px;line-height:.7;font-family:Georgia,serif;opacity:.6}
-.quote-box h2{font-size:clamp(22px,3.5vw,32px);margin:16px 0;font-weight:900}
-.quote-box p{color:#dcebea;font-size:14px;line-height:1.9}
-.order-section{background:#fff}
-.order-form{max-width:600px;margin:auto;background:var(--cream);padding:34px 28px;border-radius:20px;border:1px solid var(--border)}
-.order-form label{display:block;color:var(--teal);font-weight:800;font-size:13px;margin-bottom:6px}
-.order-form input,.order-form select,.order-form textarea{width:100%;padding:12px 14px;background:#fff;border:1.5px solid var(--border);border-radius:10px;color:var(--text);font-family:inherit;font-size:14px;margin-bottom:16px;transition:.3s;resize:vertical}
-.order-form input:focus,.order-form select:focus,.order-form textarea:focus{outline:none;border-color:var(--orange);box-shadow:0 0 0 3px rgba(223,120,67,.12)}
-.order-form textarea{min-height:90px}
-.order-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start}
-.contact-info{display:grid;gap:10px}
-.contact-item{background:var(--cream);border:1px solid var(--border);border-radius:14px;padding:18px;display:flex;gap:12px;align-items:flex-start;transition:.3s}
-.contact-item:hover{border-color:var(--orange);transform:translateX(-4px)}
-.contact-icon{width:46px;height:46px;border-radius:12px;background:var(--teal);color:#fff;display:grid;place-items:center;font-size:20px;flex-shrink:0}
-.contact-item strong{color:var(--teal);display:block;font-size:12px;margin-bottom:2px;font-weight:800}
-.contact-item span{color:var(--text);font-size:14px;font-weight:600}
-.contact-buttons{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
-.contact-buttons a{flex:1;min-width:110px;padding:12px 14px;border-radius:10px;font-weight:800;font-size:13px;display:flex;align-items:center;justify-content:center;gap:6px;transition:.3s}
-.btn-whatsapp{background:#25D366;color:#fff}
-.btn-whatsapp:hover{background:#1da851;transform:translateY(-2px)}
-.btn-call{background:var(--teal);color:#fff}
-.btn-call:hover{background:var(--orange);transform:translateY(-2px)}
-.map-box{background:linear-gradient(145deg,var(--teal),var(--teal-dark));color:#fff;padding:32px 22px;border-radius:20px;text-align:center}
-.map-icon{font-size:44px;margin-bottom:12px}
-.map-box h3{font-size:17px;margin-bottom:6px;font-weight:900}
-.map-box p{color:#dbe9e8;font-size:13px;margin-bottom:18px}
-.map-buttons a{background:#fff;color:var(--teal);padding:11px 20px;border-radius:10px;font-weight:800;font-size:13px;display:inline-flex;align-items:center;gap:6px}
-.map-buttons a:hover{background:var(--orange);color:#fff}
-footer{background:#0f2a2b;color:#d9e7e6;padding:26px 0}
-.footer-inner{display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap}
-.footer-brand{display:flex;align-items:center;gap:10px}
-.footer-logo{width:42px;height:42px;border-radius:10px;object-fit:cover;background:#fff;padding:2px}
-.footer-inner strong{font-size:15px;color:#fff;display:block;font-weight:900}
-.footer-inner p{font-size:11px;color:#a9c1c0}
-.footer-links{display:flex;gap:16px;font-size:13px;font-weight:600}
-.footer-links a:hover{color:#f3a06f}
-.floating-whatsapp{position:fixed;left:18px;bottom:18px;width:54px;height:54px;border-radius:50%;background:#25D366;color:#fff;display:grid;place-items:center;font-size:24px;box-shadow:0 10px 26px rgba(37,211,102,.45);z-index:60;transition:.3s}
-.floating-whatsapp:hover{transform:scale(1.1)}
-.modal-overlay{display:none;position:fixed;inset:0;background:rgba(10,25,25,.94);backdrop-filter:blur(10px);z-index:100;padding:16px;overflow-y:auto}
-.modal-overlay.active{display:flex;align-items:flex-start;justify-content:center}
-.modal-box{background:#fff;border-radius:22px;width:min(950px,100%);margin:30px auto;padding:28px;position:relative;box-shadow:0 30px 80px rgba(0,0,0,.6)}
-.modal-close{position:absolute;top:14px;left:14px;width:40px;height:40px;border-radius:50%;background:var(--teal);color:#fff;border:none;font-size:18px;cursor:pointer;display:grid;place-items:center;transition:.3s}
-.modal-close:hover{background:var(--orange);transform:rotate(90deg)}
-.modal-header{text-align:center;margin-bottom:20px;padding-bottom:16px;border-bottom:1px solid var(--border)}
-.modal-header span{color:var(--orange);font-weight:800;font-size:11px;letter-spacing:3px}
-.modal-header h2{color:var(--teal);font-size:22px;font-weight:900;margin-top:6px}
-.add-work-wrapper{text-align:center;margin-bottom:18px}
-.add-work-btn{display:inline-flex;align-items:center;gap:6px;background:var(--orange);color:#fff;padding:11px 22px;border-radius:12px;font-weight:800;font-size:13px;border:none;cursor:pointer;font-family:inherit;transition:.3s}
-.add-work-btn:hover{background:var(--orange-dark);transform:translateY(-2px)}
-.modal-gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
-.gallery-item{border-radius:12px;overflow:hidden;background:#f8fbfa;border:1.5px dashed var(--border);aspect-ratio:1/1;display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--text-soft);gap:5px;transition:.3s;cursor:pointer}
-.gallery-item:hover{transform:scale(1.03);border-color:var(--orange);border-style:solid}
-.gallery-item img{width:100%;height:100%;object-fit:cover}
-.gallery-item .ph-icon{font-size:26px;color:var(--teal);opacity:.35}
-.gallery-item small{font-size:10px;color:var(--text-soft);font-weight:700}
-@media(max-width:1000px){.modal-gallery{grid-template-columns:repeat(3,1fr)}}
-@media(max-width:900px){nav{display:none}.hero-grid{grid-template-columns:1fr;gap:32px}.hero-logo-box{max-width:340px;margin:auto}.cards,.steps{grid-template-columns:1fr 1fr}.contact-grid{grid-template-columns:1fr}}
-@media(max-width:600px){.nav{height:64px}.brand-logo{width:42px;height:42px}.brand-text strong{font-size:15px}.nav-call{padding:8px 13px;font-size:12px}.hero{padding:40px 0}.hero h1{font-size:30px}.hero-buttons .btn{flex:1;justify-content:center}.cards,.steps{grid-template-columns:1fr}.section{padding:50px 0}.footer-inner{flex-direction:column;text-align:center}.order-form{padding:24px 18px}.order-row{grid-template-columns:1fr}.floating-whatsapp{width:48px;height:48px;font-size:22px;left:12px;bottom:12px}.modal-box{padding:20px 14px;margin:14px auto}.modal-gallery{grid-template-columns:repeat(2,1fr)}}
+  .price-box {
+    max-width: 650px;
+    margin: 0 auto;
+    padding: 30px;
+    background: #fff;
+    border: 1px solid #e4ecea;
+    border-radius: 20px;
+    box-shadow: 0 12px 35px rgba(20, 57, 58, .07);
+  }
+
+  .price-box form {
+    display: grid;
+    gap: 18px;
+  }
+
+  .price-box .field {
+    display: grid;
+    gap: 7px;
+  }
+
+  .price-box label {
+    font-size: 13px;
+    font-weight: bold;
+  }
+
+  .price-box input,
+  .price-box select,
+  .price-box textarea {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #dce7e5;
+    border-radius: 10px;
+    background: #fbfdfc;
+    color: #172d30;
+    font: inherit;
+    font-size: 13px;
+    outline: none;
+  }
+
+  .price-box input:focus,
+  .price-box select:focus,
+  .price-box textarea:focus {
+    border-color: #087e83;
+    box-shadow: 0 0 0 3px rgba(8, 126, 131, .08);
+  }
+
+  .dimensions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+  }
+
+  .price-summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 15px;
+    background: #e6f4f2;
+    border-radius: 10px;
+    font-size: 12px;
+  }
+
+  .price-summary strong {
+    color: #087e83;
+    font-size: 14px;
+  }
+
+  .price-submit {
+    width: 100%;
+    border: none;
+  }
+
+  .price-note {
+    text-align: center;
+    font-size: 11px;
+    color: #78898a;
+  }
+
+  @media (max-width: 480px) {
+    .price-box {
+      padding: 20px 15px;
+    }
+
+    .dimensions {
+      grid-template-columns: 1fr;
+    }
+  }
 </style>
-</head>
-<body>
-  <header class="header">
-  <div class="container nav">
-    <div class="brand">
-      <img src="images/logo.jpg" alt="لوگو زاراوین" class="brand-logo">
-      <div class="brand-text"><strong>زاراوین</strong><small>درب و پنجره</small></div>
-    </div>
-    <nav>
-      <a href="#services">خدمات</a>
-      <a href="#order">استعلام قیمت</a>
-      <a href="#contact">تماس</a>
-    </nav>
-    <a href="tel:09177638433" class="nav-call">📞 تماس</a>
-  </div>
-</header>
-
-<section class="hero">
-  <div class="container">
-    <div class="hero-grid">
-      <div class="hero-text">
-        <span class="badge">✨ کیفیت برتر، ساخت دقیق</span>
-        <h1>درب و پنجره <span>زاراوین</span></h1>
-        <p>طراحی، ساخت و نصب درب و پنجره آلومینیومی و UPVC با بالاترین کیفیت و دقت.</p>
-        <div class="hero-buttons">
-          <a href="tel:09177638433" class="btn primary">📞 تماس بگیرید</a>
-          <a href="#services" class="btn outline">خدمات ما</a>
-        </div>
-        <div class="hero-badges">
-          <span>نصب تخصصی</span>
-          <span>ضمانت کیفیت</span>
-          <span>قیمت منصفانه</span>
-        </div>
-        <div class="hero-contact-box">
-          <div class="hero-contact-item">
-            <span class="hero-contact-icon">📍</span>
-            <div><strong>آدرس</strong><span>آزادگان ۱۶، درب و پنجره زاراوین</span></div>
-          </div>
-          <div class="hero-contact-item">
-            <span class="hero-contact-icon">📞</span>
-            <div><strong>شماره تماس</strong><span>۰۹۱۷۷۶۳۸۴۳۳</span></div>
-          </div>
-          <div class="hero-map-buttons">
-            <a href="https://www.google.com/maps/search/?api=1&query=آزادگان+۱۶+خوشکبار+زیما" target="_blank" rel="noopener">🗺 مسیریابی گوگل مپ</a>
-          </div>
-        </div>
-      </div>
-      <div class="hero-logo-box">
-        <img src="images/logo.jpg" alt="لوگو زاراوین" class="hero-logo-img">
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="services" class="section">
-  <div class="container">
-    <div class="section-title">
-      <span>خدمات ما</span>
-      <h2>چه کارهایی انجام می‌دهیم</h2>
-      <p>روی هر کارت کلیک کنید تا نمونه‌کارهای آن را ببینید</p>
-    </div>
-    <div class="cards">
-      <div class="card" onclick="openModal('aluminum')">
-        <div class="card-content">
-          <span class="card-tag">QUALITY</span>
-          <h3 class="card-title">پنجره آلومینیوم</h3>
-          <div class="card-line"></div>
-          <p class="card-desc">ریلی، لولایی و دوجداره با یراق دقیق</p>
-          <span class="card-btn">نمونه‌کارها ←</span>
-        </div>
-      </div>
-      <div class="card" onclick="openModal('upvc')" style="background:linear-gradient(135deg,#c45f2a,#df7843)">
-        <div class="card-content">
-          <span class="card-tag">COMFORT</span>
-          <h3 class="card-title">پنجره UPVC</h3>
-          <div class="card-line"></div>
-          <p class="card-desc">عایق صوتی و حرارتی بالا</p>
-          <span class="card-btn">نمونه‌کارها ←</span>
-        </div>
-      </div>
-      <div class="card" onclick="openModal('door')" style="background:linear-gradient(135deg,#2a5758,#4a8f8f)">
-        <div class="card-content">
-          <span class="card-tag">SECURITY</span>
-          <h3 class="card-title">درب ضد سرقت</h3>
-          <div class="card-line"></div>
-          <p class="card-desc">با قفل چندلنگه و بدنه مقاوم</p>
-          <span class="card-btn">نمونه‌کارها ←</span>
-        </div>
-      </div>
-      <div class="card" onclick="openModal('glasswall')" style="background:linear-gradient(135deg,#1a3536,#2a5758)">
-        <div class="card-content">
-          <span class="card-tag">MODERN</span>
-          <h3 class="card-title">نمای شیشه‌ای</h3>
-          <div class="card-line"></div>
-          <p class="card-desc">طراحی مدرن برای ساختمان‌ها</p>
-          <span class="card-btn">نمونه‌کارها ←</span>
-        </div>
-      </div>
-      <div class="card" onclick="openModal('glassdoor')" style="background:linear-gradient(135deg,#df7843,#f3a06f)">
-        <div class="card-content">
-          <span class="card-tag">ELEGANT</span>
-          <h3 class="card-title">درب شیشه‌ای</h3>
-          <div class="card-line"></div>
-          <p class="card-desc">سکوریت برای لابی و اداری</p>
-          <span class="card-btn">نمونه‌کارها ←</span>
-        </div>
-      </div>
-      <div class="card" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})" style="background:linear-gradient(135deg,#0f2a2b,#1f3f40)">
-        <div class="card-content">
-          <span class="card-tag">SUPPORT</span>
-          <h3 class="card-title">تماس با ما</h3>
-          <div class="card-line"></div>
-          <p class="card-desc">مشاوره رایگان و استعلام قیمت</p>
-          <span class="card-btn">تماس بگیرید ←</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="steps-section">
-  <div class="container">
-    <div class="section-title">
-      <span>فرآیند کار</span>
-      <h2>مراحل سفارش</h2>
-    </div>
-    <div class="steps">
-      <div class="step"><div class="step-num">۱</div><h3>اندازه‌گیری</h3><p>بازدید و برداشت دقیق ابعاد</p></div>
-      <div class="step"><div class="step-num">۲</div><h3>ساخت در کارگاه</h3><p>برش، مونتاژ و یراق‌کشی</p></div>
-      <div class="step"><div class="step-num">۳</div><h3>نصب</h3><p>نصب با آب‌بندی و تنظیم</p></div>
-    </div>
-  </div>
-</section>
-
-<section class="quote-section">
-  <div class="container quote-box">
-    <div class="quote-mark">”</div>
-    <h2>کیفیت، تعهد و دقت</h2>
-    <p>ما در زاراوین، با تکیه بر تجربه و مهارت، هر پروژه را با بالاترین استانداردها اجرا می‌کنیم.</p>
-  </div>
-</section>
-
-<section id="order" class="section order-section">
-  <div class="container">
-    <div class="section-title">
-      <span>سفارش</span>
-      <h2>استعلام قیمت</h2>
-      <p>مشخصات را بنویسید؛ پیام در واتساپ باز می‌شود.</p>
-    </div>
-    <form class="order-form" onsubmit="sendToWhatsapp(event)">
-      <label>نام شما</label>
-      <input type="text" id="name" placeholder="نام شما" required>
-      <label>نوع کار</label>
-      <select id="type">
-        <option>پنجره آلومینیوم</option>
-        <option>پنجره UPVC</option>
-        <option>درب ضد سرقت</option>
-        <option>نمای شیشه‌ای</option>
-        <option>درب شیشه‌ای</option>
-        <option>سایر</option>
-      </select>
-      <div class="order-row">
-        <div><label>طول (سانتی‌متر)</label><input type="number" id="length" placeholder="۱۲۰" min="0"></div>
-        <div><label>عرض (سانتی‌متر)</label><input type="number" id="width" placeholder="۹۰" min="0"></div>
-      </div>
-      <label>توضیحات</label>
-      <textarea id="desc" rows="3" placeholder="مثلاً پنجره پذیرایی سه لنگه"></textarea>
-      <button type="submit" class="btn submit">📤 ارسال در واتساپ</button>
-    </form>
-  </div>
-</section>
-
-<section id="contact" class="section">
-  <div class="container">
-    <div class="section-title">
-      <span>تماس با ما</span>
-      <h2>آدرس و شماره تلفن</h2>
-    </div>
-    <div class="contact-grid">
-      <div class="contact-info">
-        <div class="contact-item">
-          <div class="contact-icon">📍</div>
-          <div><strong>آدرس</strong><span>آزادگان ۱۶، درب و پنجره زاراوین</span></div>
-        </div>
-        <div class="contact-item">
-          <div class="contact-icon">📞</div>
-          <div><strong>شماره تلفن</strong><span>۰۹۱۷۷۶۳۸۴۳۳</span></div>
-        </div>
-        <div class="contact-buttons">
-          <a href="tel:09177638433" class="btn-call">📞 تماس بگیرید</a>
-          <a href="https://wa.me/989177638433" target="_blank" rel="noopener" class="btn-whatsapp">💬 واتساپ</a>
-        </div>
-      </div>
-      <div class="map-box">
-        <div class="map-icon">🗺</div>
-        <h3>مسیریابی سریع</h3>
-        <p>برای مشاهده مسیر روی دکمه زیر کلیک کنید.</p>
-        <div class="map-buttons">
-          <a href="https://www.google.com/maps/search/?api=1&query=آزادگان+۱۶+خوشکبار+زیما" target="_blank" rel="noopener">🗺 گوگل مپ</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<footer>
-  <div class="container footer-inner">
-    <div class="footer-brand">
-      <img src="images/logo.jpg" alt="لوگو زاراوین" class="footer-logo">
-      <div><strong>زاراوین</strong><p>© ۱۴۰۳ - تمامی حقوق محفوظ است</p></div>
-    </div>
-    <div class="footer-links">
-      <a href="#services">خدمات</a>
-      <a href="#order">استعلام قیمت</a>
-      <a href="#contact">تماس</a>
-    </div>
-  </div>
-</footer>
-
-<a href="https://wa.me/989177638433" class="floating-whatsapp" target="_blank" rel="noopener">💬</a>
-
-<div class="modal-overlay" id="modal" onclick="if(event.target===this)closeModal()">
-  <div class="modal-box">
-    <button class="modal-close" onclick="closeModal()">✕</button>
-    <div class="modal-header">
-      <span>نمونه کارها</span>
-      <h2 id="modalTitle">عنوان</h2>
-    </div>
-    <div class="add-work-wrapper">
-      <button class="add-work-btn" onclick="document.getElementById('fileInput').click()">➕ افزودن نمونه‌کار</button>
-      <input type="file" id="fileInput" accept="image/*" style="display:none" onchange="addWork(event)">
-    </div>
-    <div class="modal-gallery" id="modalGallery"></div>
-  </div>
-</div>
 
 <script>
-const portfolios={aluminum:{title:"پنجره آلومینیوم",images:[]},upvc:{title:"پنجره UPVC",images:[]},door:{title:"درب ضد سرقت",images:[]},glasswall:{title:"نمای شیشه‌ای",images:[]},glassdoor:{title:"درب شیشه‌ای",images:[]}};
-let currentKey=null;
-function openModal(key){const d=portfolios[key];if(!d)return;currentKey=key;document.getElementById("modalTitle").textContent=d.title;renderGallery();document.getElementById("modal").classList.add("active");document.body.style.overflow="hidden";}
-function renderGallery(){const d=portfolios[currentKey];const g=document.getElementById("modalGallery");g.innerHTML="";for(let i=0;i<18;i++){const it=document.createElement("div");it.className="gallery-item";it.innerHTML=d.images[i]?`<img src="${d.images[i]}" alt="${d.title}">`:`<div class="ph-icon">🖼</div><small>نمونه ${i+1}</small>`;g.appendChild(it);}}
-function addWork(e){const f=e.target.files[0];if(!f)return;const r=new FileReader();r.onload=(ev)=>{const d=portfolios[currentKey];if(d.images.length<18){d.images.push(ev.target.result);renderGallery();}else{alert("حداکثر ۱۸ نمونه‌کار");}};r.readAsDataURL(f);e.target.value="";}
-function closeModal(){document.getElementById("modal").classList.remove("active");document.body.style.overflow="";}
-document.addEventListener("keydown",(e)=>{if(e.key==="Escape")closeModal();});
-function sendToWhatsapp(e){e.preventDefault();const name=document.getElementById("name").value;const type=document.getElementById("type").value;const length=document.getElementById("length").value||"—";const width=document.getElementById("width").value||"—";const desc=document.getElementById("desc").value||"—";const message=`سلام، از کاتالوگ زاراوین برای استعلام قیمت پیام می‌دم.%0A%0A👤 نام: ${name}%0A🔧 نوع کار: ${type}%0A📏 طول: ${length} سانتی‌متر%0A📐 عرض: ${width} سانتی‌متر%0A📝 توضیحات: ${desc}`;window.open(`https://wa.me/989177638433?text=${message}`,"_blank");}
-document.addEventListener("DOMContentLoaded",()=>{const year=new Intl.DateTimeFormat("fa-IR",{year:"numeric"}).format(new Date());const footerP=document.querySelector("footer .footer-inner div p");if(footerP)footerP.textContent=`© ${year} - تمامی حقوق محفوظ است`;});
+  const priceForm = document.getElementById("priceForm");
+  const widthInput = document.getElementById("width");
+  const heightInput = document.getElementById("height");
+  const quantityInput = document.getElementById("quantity");
+  const areaOutput = document.getElementById("area");
+
+  function updateArea() {
+    const width = Number(widthInput.value);
+    const height = Number(heightInput.value);
+
+    if (width > 0 && height > 0) {
+      const area = (width * height) / 10000;
+      areaOutput.textContent =
+        area.toLocaleString("fa-IR", {
+          maximumFractionDigits: 3
+        }) + " متر مربع";
+    } else {
+      areaOutput.textContent = "۰ متر مربع";
+    }
+  }
+
+  widthInput.addEventListener("input", updateArea);
+  heightInput.addEventListener("input", updateArea);
+
+  priceForm.addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    const product = document.getElementById("product").value;
+    const width = Number(widthInput.value);
+    const height = Number(heightInput.value);
+    const quantity = Number(quantityInput.value);
+    const details = document.getElementById("details").value.trim();
+
+    if (
+      !product ||
+      !Number.isFinite(width) ||
+      !Number.isFinite(height) ||
+      !Number.isFinite(quantity) ||
+      width < 1 || width > 2000 ||
+      height < 1 || height > 2000 ||
+      quantity < 1 || quantity > 1000
+    ) {
+      alert("لطفاً اطلاعات و ابعاد را به‌درستی وارد کنید.");
+      return;
+    }
+
+    const area = (width * height) / 10000;
+
+    const message =
+      "سلام، درخواست استعلام قیمت از سایت زاراوین دارم.\n\n" +
+      "نوع محصول: " + product + "\n" +
+      "عرض: " + width + " سانتی‌متر\n" +
+      "طول / ارتفاع: " + height + " سانتی‌متر\n" +
+      "مساحت هر محصول: " + area.toFixed(3) + " متر مربع\n" +
+      "تعداد: " + quantity + "\n" +
+      "مجموع مساحت تقریبی: " +
+      (area * quantity).toFixed(3) + " متر مربع\n" +
+      "توضیحات: " + (details || "ندارد");
+
+    const whatsappURL =
+      "https://wa.me/989177638433?text=" +
+      encodeURIComponent(message);
+
+    window.open(whatsappURL, "_blank");
+  });
 </script>
-</body>
-</html>
