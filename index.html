@@ -3,424 +3,259 @@
 <html lang="fa" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#15363a">
-<meta name="description" content="درب و پنجره زاراوین، مشاوره و استعلام قیمت درب و پنجره دوجداره، UPVC و آلومینیوم">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#007029">
 <title>درب و پنجره زاراوین | ZARAWIN</title>
-
 <style>
-:root {
-  --bg: #f4f8f7;
-  --dark: #15363a;
-  --dark2: #20484b;
-  --orange: #ff8738;
-  --teal: #159b91;
-  --white: #ffffff;
-  --muted: #617779;
-  --border: #dce8e6;
-  --radius: 17px;
+:root{
+  --green:#007029;
+  --green-dark:#004d24;
+  --green-light:#eaf4ed;
+  --orange:#C65B18;
+  --orange-dark:#99400d;
+  --bg:#f6f8f6;
+  --text:#18332b;
+  --muted:#687b72;
+  --white:#fff;
+  --border:#dce6df;
 }
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body {
-  margin: 0;
-  font-family: Tahoma, Arial, sans-serif;
-  background: var(--bg);
-  color: var(--dark);
-  line-height: 1.9;
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:Tahoma,Arial,sans-serif;
+  line-height:1.9;
 }
-button, input, select, textarea {
-  font: inherit;
+button,input,select,textarea{font:inherit}
+a{color:inherit;text-decoration:none}
+button{cursor:pointer}
+.container{width:min(1100px,92%);margin:auto}
+header{
+  position:sticky;top:0;z-index:100;
+  color:#fff;background:var(--green-dark);
+  box-shadow:0 3px 15px #00000012;
 }
-button, a { -webkit-tap-highlight-color: transparent; }
-a { color: inherit; text-decoration: none; }
-button { cursor: pointer; }
-.container {
-  width: min(1100px, 92%);
-  margin: auto;
+.nav{
+  min-height:72px;display:flex;align-items:center;
+  justify-content:space-between;gap:15px;
 }
-header {
-  background: var(--dark);
-  color: white;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  box-shadow: 0 3px 15px #102b2b20;
+.brand{display:flex;align-items:center;gap:10px;font-weight:bold}
+.brand-logo{
+  display:grid;place-items:center;width:43px;height:43px;
+  border-radius:12px;background:var(--orange);color:white;
+  font-weight:900;font-size:14px;
 }
-.nav {
-  min-height: 75px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 15px;
+.brand small{display:block;font-size:10px;color:#c5ddcb;letter-spacing:1px}
+.nav-links{display:flex;gap:19px;font-size:13px}
+.nav-links a:hover{color:#f3a06b}
+.menu-btn{
+  display:none;color:white;background:transparent;
+  border:1px solid #ffffff70;border-radius:9px;padding:7px 10px
 }
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-weight: bold;
-  font-size: 20px;
+.hero{
+  background:linear-gradient(125deg,var(--green-dark),var(--green));
+  color:white;padding:42px 0;
 }
-.brand-mark {
-  width: 43px;
-  height: 43px;
-  border-radius: 13px;
-  background: var(--orange);
-  color: var(--dark);
-  display: grid;
-  place-items: center;
-  font-weight: 900;
-  font-size: 15px;
+.hero-grid{
+  display:grid;grid-template-columns:1fr 1fr;
+  align-items:center;gap:30px;
 }
-.brand small {
-  display: block;
-  color: #b9d2cf;
-  font-size: 10px;
-  letter-spacing: 1px;
+.hero h1{font-size:clamp(28px,4vw,44px);line-height:1.5;margin:10px 0}
+.hero p{color:#e1eee4;font-size:14px}
+.eyebrow{color:#f5b58b;font-size:13px;font-weight:bold}
+.hero-img{
+  width:100%;height:290px;object-fit:cover;
+  border-radius:18px;border:1px solid #ffffff35
 }
-.nav-links {
-  display: flex;
-  gap: 18px;
-  align-items: center;
-  font-size: 13px;
+.btn{
+  display:inline-flex;justify-content:center;align-items:center;
+  gap:7px;padding:11px 16px;border:0;border-radius:10px;
+  font-size:13px;font-weight:bold;
 }
-.nav-links a:hover { color: var(--orange); }
-.menu-button {
-  display: none;
-  border: 1px solid #ffffff50;
-  color: white;
-  background: transparent;
-  padding: 7px 11px;
-  border-radius: 9px;
+.btn-orange{background:var(--orange);color:white}
+.btn-orange:hover{background:var(--orange-dark)}
+.btn-green{background:var(--green);color:white}
+.btn-white{background:white;color:var(--green-dark)}
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}
+section{padding:38px 0}
+.section-heading{margin-bottom:20px}
+.section-heading h2{font-size:22px;margin:0}
+.section-heading p{font-size:12px;color:var(--muted);margin:5px 0 0}
+.about{background:white;border-bottom:1px solid var(--border)}
+.about p{font-size:14px;color:#53685c;margin:0}
+
+/* چهار کارت محصول */
+.products{background:#f6f8f6}
+.products-heading{text-align:center;margin-bottom:24px}
+.products-heading .eyebrow{color:var(--orange)}
+.products-heading h2{font-size:25px;margin:5px 0}
+.products-heading p{font-size:13px;color:var(--muted)}
+.product-grid{
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:17px
 }
-.hero {
-  background: linear-gradient(130deg, #15363a, #226963);
-  color: white;
-  padding: 48px 0 42px;
-  overflow: hidden;
+.product-card{
+  position:relative;min-width:0;overflow:hidden;
+  border-radius:15px;background:white;border:1px solid var(--border);
+  box-shadow:0 5px 18px #163b2410;
 }
-.hero-grid {
-  display: grid;
-  grid-template-columns: 1.1fr .9fr;
-  align-items: center;
-  gap: 30px;
+.product-card img{
+  display:block;width:100%;height:230px;object-fit:cover;
+  background:#e0e8e2;
 }
-.eyebrow {
-  color: #ffb37c;
-  font-size: 13px;
-  font-weight: bold;
+.product-caption{
+  display:flex;align-items:center;justify-content:space-between;
+  gap:12px;padding:14px;
 }
-.hero h1 {
-  font-size: clamp(28px, 4vw, 45px);
-  line-height: 1.55;
-  margin: 12px 0;
+.product-caption h3{font-size:15px;margin:0}
+.product-caption p{font-size:11px;color:var(--muted);margin:3px 0 0}
+.arrow{
+  display:grid;place-items:center;flex-shrink:0;
+  width:37px;height:37px;border-radius:50%;
+  color:white;background:var(--green);font-size:20px;
 }
-.hero p { color: #e0efed; font-size: 15px; }
-.hero-image {
-  width: 100%;
-  height: 300px;
-  object-fit: cover;
-  border-radius: 25px;
-  border: 4px solid #ffffff20;
+.product-card:hover{transform:translateY(-2px);transition:.2s}
+
+/* نمونه‌کارهای صفحه اصلی */
+.samples{background:white}
+.heading-row{
+  display:flex;align-items:center;justify-content:space-between;
+  gap:12px;margin-bottom:17px
 }
-.actions {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-  margin-top: 23px;
+.heading-row h2{font-size:21px;margin:0}
+.heading-row p{font-size:12px;color:var(--muted);margin:4px 0 0}
+.text-link{color:var(--green);font-size:12px;font-weight:bold}
+.preview-grid{
+  display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px
 }
-.btn {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  gap: 6px;
-  border: none;
-  border-radius: 12px;
-  padding: 11px 17px;
-  font-weight: bold;
-  font-size: 13px;
+.sample-card{
+  display:block;overflow:hidden;width:100%;padding:0;text-align:right;
+  border:1px solid var(--border);border-radius:12px;background:white;
+  color:var(--text);min-width:0
 }
-.btn-orange { background: var(--orange); color: #172e30; }
-.btn-light { background: white; color: var(--dark); }
-.btn-teal { background: var(--teal); color: white; }
-.btn-outline {
-  background: transparent;
-  border: 1px solid #ffffff70;
-  color: white;
+.sample-card img{
+  display:block;width:100%;height:88px;object-fit:cover;
+  background:#e2eae5
 }
-section { padding: 37px 0; }
-.section-head {
-  display: flex;
-  align-items: end;
-  justify-content: space-between;
-  gap: 15px;
-  margin-bottom: 18px;
+.sample-title{
+  display:block;padding:6px 8px;font-size:11px;font-weight:bold;
+  line-height:1.7
 }
-.section-head h2 {
-  font-size: 22px;
-  margin: 0;
+.sample-card:hover{border-color:var(--green)}
+.gallery-page{
+  display:none;background:#f6f8f6;min-height:75vh;padding:25px 0 40px
 }
-.section-head p {
-  margin: 4px 0 0;
-  color: var(--muted);
-  font-size: 12px;
+.gallery-page.active{display:block}
+.gallery-top{
+  display:flex;justify-content:space-between;align-items:center;
+  gap:10px;margin-bottom:8px
 }
-.section-link {
-  color: #087c75;
-  font-size: 13px;
-  font-weight: bold;
-  white-space: nowrap;
+.gallery-top h2{font-size:20px;margin:0}
+.gallery-desc{font-size:12px;color:var(--muted);margin:0 0 18px}
+.all-grid{
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px
 }
-.intro {
-  background: white;
-  border-bottom: 1px solid var(--border);
+.all-grid .sample-card img{height:145px}
+.all-grid .sample-title{font-size:13px;padding:9px}
+.photos-grid{
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px
 }
-.intro p {
-  color: #536a6b;
-  font-size: 14px;
-  margin: 0;
+.photos-grid img{
+  display:block;width:100%;aspect-ratio:4/3;object-fit:cover;
+  border-radius:12px;background:#e2eae5
 }
 
-/* کارت‌های کوچک نمونه‌کار صفحه اصلی */
-.preview-grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 10px;
+/* فرم استعلام */
+.quote{background:var(--green-light)}
+.quote-grid{
+  display:grid;grid-template-columns:.8fr 1.2fr;
+  gap:20px;align-items:start
 }
-.sample-card {
-  padding: 0;
-  overflow: hidden;
-  border-radius: 13px;
-  border: 1px solid var(--border);
-  background: white;
-  text-align: right;
-  color: var(--dark);
-  min-width: 0;
-  transition: transform .15s, box-shadow .15s;
+.quote-info{
+  background:var(--green-dark);color:white;padding:22px;border-radius:16px
 }
-.sample-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 5px 16px #15363a12;
+.quote-info p{font-size:13px;color:#d2e3d6}
+.form-card{
+  padding:20px;border-radius:16px;background:white;
+  border:1px solid var(--border)
 }
-.sample-card img {
-  display: block;
-  width: 100%;
-  height: 90px;
-  object-fit: cover;
-  background: #dbe7e4;
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.field{margin-bottom:12px}
+.field label{display:block;font-size:12px;font-weight:bold;margin-bottom:5px}
+.field input,.field select,.field textarea{
+  display:block;width:100%;padding:10px;border:1px solid #d4e0d7;
+  border-radius:9px;background:#fbfdfb;color:var(--text)
 }
-.sample-card .card-title {
-  display: block;
-  padding: 5px 7px 7px;
-  font-size: 11px;
-  font-weight: bold;
-  line-height: 1.7;
+.field textarea{min-height:85px;resize:vertical}
+.area-result{
+  background:var(--green-light);padding:9px 12px;
+  border-radius:9px;font-size:12px;margin-bottom:12px
 }
-.samples-page { display: none; }
-.samples-page.active { display: block; }
-.gallery-page {
-  display: none;
-  min-height: 75vh;
-  background: #12272b;
-  color: white;
-  padding: 22px 0 35px;
+.contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.contact-card{
+  padding:17px;background:white;border:1px solid var(--border);
+  border-radius:13px;min-width:0
 }
-.gallery-page.active { display: block; }
-.gallery-top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 10px;
-  margin-bottom: 20px;
+.contact-card strong{display:block}
+.contact-card p{font-size:12px;color:var(--muted);overflow-wrap:anywhere}
+footer{background:var(--green-dark);color:white;padding:24px 0;font-size:12px}
+.footer-row{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+.floating-call{
+  position:fixed;left:14px;bottom:16px;z-index:90;
+  background:var(--orange);color:white;border-radius:30px;
+  padding:11px 15px;font-size:12px;font-weight:bold;
+  box-shadow:0 4px 16px #0002
 }
-.gallery-top h2 { font-size: 20px; margin: 0; }
-.gallery-top .btn { flex-shrink: 0; }
-.gallery-description {
-  color: #c2d7d5;
-  font-size: 13px;
-  margin: -12px 0 20px;
-}
-.all-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 13px;
-}
-.all-grid .sample-card img { height: 145px; }
-.all-grid .sample-card .card-title {
-  font-size: 13px;
-  padding: 9px;
-}
-.all-grid .sample-card { background: #203b40; color: white; border-color: #36565a; }
-.photos-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 12px;
-}
-.photos-grid img {
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
-  border-radius: 13px;
-  background: #dbe7e4;
-}
-.empty-message {
-  padding: 20px;
-  color: #d1e3e0;
-  text-align: center;
-}
+.note{font-size:11px;color:var(--muted);margin-top:10px}
 
-/* استعلام قیمت */
-.quote-section {
-  background: #e8f1ef;
-}
-.quote-layout {
-  display: grid;
-  grid-template-columns: .8fr 1.2fr;
-  gap: 24px;
-  align-items: start;
-}
-.quote-info {
-  background: var(--dark);
-  color: white;
-  padding: 22px;
-  border-radius: var(--radius);
-}
-.quote-info p { color: #c6dbd8; font-size: 13px; }
-.quote-info h3 { margin-top: 0; }
-.form-card {
-  background: white;
-  border: 1px solid var(--border);
-  padding: 20px;
-  border-radius: var(--radius);
-}
-.form-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 13px;
-}
-.field { margin-bottom: 12px; }
-.field label {
-  display: block;
-  font-size: 12px;
-  font-weight: bold;
-  margin-bottom: 5px;
-}
-.field input, .field select, .field textarea {
-  width: 100%;
-  padding: 11px;
-  border: 1px solid #cedbd9;
-  border-radius: 10px;
-  background: #fbfdfc;
-  color: var(--dark);
-  outline-color: var(--teal);
-}
-.field textarea { resize: vertical; min-height: 90px; }
-.area-result {
-  background: #e6f5f1;
-  border-radius: 10px;
-  padding: 9px 12px;
-  font-size: 13px;
-  margin-bottom: 13px;
-}
-.contact-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
-}
-.contact-card {
-  background: white;
-  border: 1px solid var(--border);
-  padding: 17px;
-  border-radius: 14px;
-  min-width: 0;
-}
-.contact-card strong { display: block; margin-bottom: 6px; }
-.contact-card p { font-size: 12px; color: var(--muted); overflow-wrap: anywhere; }
-footer {
-  background: #102b2e;
-  color: white;
-  padding: 27px 0;
-  font-size: 12px;
-}
-.footer-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 15px;
-  flex-wrap: wrap;
-}
-.floating-call {
-  position: fixed;
-  left: 15px;
-  bottom: 18px;
-  z-index: 90;
-  background: var(--orange);
-  color: var(--dark);
-  box-shadow: 0 5px 18px #0003;
-  padding: 12px 16px;
-  border-radius: 30px;
-  font-size: 13px;
-  font-weight: bold;
-}
-.notice {
-  font-size: 11px;
-  color: var(--muted);
-  margin-top: 10px;
-}
-
-@media(max-width:700px) {
-  .nav { min-height: 65px; }
-  .menu-button { display: block; }
-  .nav-links {
-    display: none;
-    position: absolute;
-    top: 65px;
-    right: 0;
-    left: 0;
-    background: var(--dark);
-    padding: 15px 5%;
-    flex-direction: column;
-    align-items: stretch;
-    gap: 7px;
+@media(max-width:700px){
+  .nav{min-height:64px}
+  .menu-btn{display:block}
+  .nav-links{
+    display:none;position:absolute;top:64px;right:0;left:0;
+    padding:12px 5%;background:var(--green-dark);
+    flex-direction:column;gap:5px
   }
-  .nav-links.open { display: flex; }
-  .nav-links a { padding: 7px 0; }
-  .hero { padding: 30px 0; }
-  .hero-grid { grid-template-columns: 1fr; gap: 20px; }
-  .hero-image { height: 210px; }
-  .hero h1 { font-size: 28px; }
-  section { padding: 28px 0; }
-  .section-head h2 { font-size: 18px; }
-  .preview-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .preview-grid .sample-card img { height: 78px; }
-  .preview-grid .sample-card .card-title { font-size: 11px; }
-  .all-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 9px; }
-  .all-grid .sample-card img { height: 115px; }
-  .quote-layout { grid-template-columns: 1fr; }
-  .contact-grid { grid-template-columns: 1fr; }
+  .nav-links.open{display:flex}
+  .nav-links a{padding:6px 0}
+  .hero{padding:28px 0}
+  .hero-grid{grid-template-columns:1fr;gap:18px}
+  .hero-img{height:205px}
+  section{padding:28px 0}
+  .product-card img{height:165px}
+  .product-caption{padding:10px}
+  .product-caption h3{font-size:12px}
+  .product-caption p{font-size:10px}
+  .arrow{width:31px;height:31px}
+  .preview-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .preview-grid .sample-card img{height:78px}
+  .all-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+  .all-grid .sample-card img{height:112px}
+  .quote-grid{grid-template-columns:1fr}
+  .contact-grid{grid-template-columns:1fr}
 }
-@media(max-width:360px) {
-  .brand { font-size: 16px; }
-  .form-grid { grid-template-columns: 1fr; gap: 0; }
-  .gallery-top h2 { font-size: 16px; }
+@media(max-width:360px){
+  .brand{font-size:15px}
+  .form-grid{grid-template-columns:1fr;gap:0}
+  .product-caption{align-items:flex-start}
+  .product-caption h3{font-size:11px}
 }
 </style>
 </head>
-
 <body>
 
 <header>
   <div class="container nav">
-    <a class="brand" href="#home" onclick="showHome()">
-      <span class="brand-mark">ZW</span>
+    <a href="#home" class="brand" onclick="showHome()">
+      <span class="brand-logo">ZW</span>
       <span>زاراوین<small>ZARAWIN</small></span>
     </a>
-
-    <button class="menu-button" onclick="toggleMenu()" aria-label="باز کردن منو">☰ منو</button>
-
+    <button class="menu-btn" onclick="toggleMenu()">☰ منو</button>
     <nav class="nav-links" id="navLinks">
       <a href="#home" onclick="showHome();closeMenu()">صفحه اصلی</a>
       <a href="#about" onclick="showHome();closeMenu()">درباره ما</a>
+      <a href="#products" onclick="showHome();closeMenu()">محصولات</a>
       <a href="#samples" onclick="showHome();closeMenu()">نمونه‌کارها</a>
       <a href="#quote" onclick="showHome();closeMenu()">استعلام قیمت</a>
       <a href="#contact" onclick="showHome();closeMenu()">تماس با ما</a>
@@ -429,149 +264,181 @@ footer {
 </header>
 
 <main id="homePage">
-
   <div class="hero" id="home">
     <div class="container hero-grid">
       <div>
-        <span class="eyebrow">کیفیت، زیبایی و دوام</span>
+        <span class="eyebrow">کیفیت در ساخت، زیبایی در اجرا</span>
         <h1>درب و پنجره زاراوین</h1>
         <p>
-          انتخابی زیبا برای خانه‌ای آرام‌تر؛
-          آشنایی با مدل‌های درب و پنجره دوجداره و ثبت درخواست استعلام قیمت.
+          انتخابی مدرن برای خانه و ساختمان شما؛
+          آشنایی با مدل‌های مختلف درب، پنجره و نمای شیشه‌ای.
         </p>
         <div class="actions">
           <a class="btn btn-orange" href="#quote">استعلام قیمت</a>
-          <a class="btn btn-outline" href="#samples">مشاهده نمونه‌کارها</a>
+          <a class="btn btn-white" href="#products">مشاهده محصولات</a>
         </div>
       </div>
-      <div>
-        <img class="hero-image"
-          src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1000&q=85"
-          alt="نمونه درب و پنجره مدرن"
-          onerror="this.style.display='none'">
-      </div>
+      <img class="hero-img"
+        src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1000&q=85"
+        alt="درب و پنجره مدرن">
     </div>
   </div>
 
-  <section class="intro" id="about">
+  <section class="about" id="about">
     <div class="container">
-      <div class="section-head">
-        <div>
-          <h2>درب و پنجره زاراوین</h2>
-          <p>زیبایی در جزئیات، آرامش در انتخاب</p>
-        </div>
+      <div class="section-heading">
+        <h2>درب و پنجره زاراوین</h2>
+        <p>ترکیب طراحی مدرن و انتخابی متناسب با ساختمان شما</p>
       </div>
       <p>
-        در زاراوین می‌توانید نمونه‌های مختلف درب و پنجره را بررسی کنید،
-        مدل موردنظرتان را انتخاب کنید و برای دریافت مشاوره و استعلام قیمت
-        درخواست بفرستید.
+        مدل‌های مختلف را مشاهده کنید، نمونه‌کارها را بررسی کنید و
+        برای دریافت مشاوره و استعلام قیمت درخواست خود را بفرستید.
       </p>
     </div>
   </section>
 
-  <!-- فقط چند کارت کوچک در صفحه اصلی -->
-  <section id="samples">
+  <!-- چهار محصول اصلی -->
+  <section class="products" id="products">
     <div class="container">
-      <div class="section-head">
-        <div>
-          <h2>نمونه‌کارهای زاراوین</h2>
-          <p>برای مشاهده تصاویر هر پروژه، کارت آن را انتخاب کنید.</p>
-        </div>
-        <button class="section-link" onclick="openAllSamples()">مشاهده همه ←</button>
+      <div class="products-heading">
+        <span class="eyebrow">محصولات و خدمات</span>
+        <h2>محصولات زاراوین</h2>
+        <p>راهکارهای متنوع برای ساختمان‌های مدرن</p>
       </div>
 
-      <div class="preview-grid" id="previewGrid"></div>
+      <div class="product-grid">
+        <a class="product-card" href="#quote">
+          <img
+            src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=900&q=80"
+            alt="درب و پنجره UPVC" loading="lazy">
+          <div class="product-caption">
+            <div>
+              <h3>درب و پنجره UPVC</h3>
+              <p>عایق حرارتی و صوتی، مقاوم و اقتصادی</p>
+            </div>
+            <span class="arrow">←</span>
+          </div>
+        </a>
 
-      <div style="text-align:center;margin-top:16px">
-        <button class="btn btn-teal" onclick="openAllSamples()">
+        <a class="product-card" href="#quote">
+          <img
+            src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=80"
+            alt="درب و پنجره آلومینیوم ترمال بریک" loading="lazy">
+          <div class="product-caption">
+            <div>
+              <h3>آلومینیوم ترمال بریک</h3>
+              <p>طراحی ظریف، استحکام و عایق مناسب</p>
+            </div>
+            <span class="arrow">←</span>
+          </div>
+        </a>
+
+        <a class="product-card" href="#quote">
+          <img
+            src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?auto=format&fit=crop&w=900&q=80"
+            alt="نمای شیشه‌ای ساختمان" loading="lazy">
+          <div class="product-caption">
+            <div>
+              <h3>نمای شیشه‌ای</h3>
+              <p>نمای مدرن، نور طبیعی و جلوه ماندگار</p>
+            </div>
+            <span class="arrow">←</span>
+          </div>
+        </a>
+
+        <a class="product-card" href="#quote">
+          <img
+            src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=900&q=80"
+            alt="درب ضدسرقت مدرن" loading="lazy">
+          <div class="product-caption">
+            <div>
+              <h3>درب ضدسرقت</h3>
+              <p>انتخابی مناسب برای امنیت ورودی</p>
+            </div>
+            <span class="arrow">←</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- پیش‌نمایش کوچک نمونه‌کارها -->
+  <section class="samples" id="samples">
+    <div class="container">
+      <div class="heading-row">
+        <div>
+          <h2>نمونه‌کارهای زاراوین</h2>
+          <p>برای دیدن گالری هر پروژه روی کارت بزنید.</p>
+        </div>
+        <button class="text-link" onclick="openAllSamples()">مشاهده همه ←</button>
+      </div>
+      <div class="preview-grid" id="previewGrid"></div>
+      <div style="text-align:center;margin-top:17px">
+        <button class="btn btn-green" onclick="openAllSamples()">
           مشاهده ۱۸ نمونه‌کار
         </button>
       </div>
     </div>
   </section>
 
-  <!-- بخش خدمات زاراوین عمداً حذف شده است -->
-
-  <section class="quote-section" id="quote">
+  <section class="quote" id="quote">
     <div class="container">
-      <div class="section-head">
-        <div>
-          <h2>استعلام قیمت درب و پنجره</h2>
-          <p>مشخصات اولیه را وارد کنید تا درخواست در واتساپ آماده شود.</p>
-        </div>
+      <div class="section-heading">
+        <h2>استعلام قیمت درب و پنجره</h2>
+        <p>مشخصات را وارد کنید تا درخواست شما در واتساپ آماده شود.</p>
       </div>
 
-      <div class="quote-layout">
+      <div class="quote-grid">
         <div class="quote-info">
           <h3>درخواست قیمت</h3>
-          <p>
-            نوع محصول و اندازه‌های تقریبی را وارد کنید.
-            پس از زدن دکمه، متن درخواست در واتساپ باز می‌شود.
-          </p>
-          <p>📞 تلفن: ۰۹۱۷۷۶۳۸۴۳۳</p>
-          <p>📍 آدرس: آزادگان ۱۶، دفتر درب و پنجره زاراوین</p>
+          <p>اندازه‌ها و نوع محصول را وارد کنید. قیمت نهایی پس از بررسی مشخصات اعلام می‌شود.</p>
+          <p>☎ ۰۹۱۷۷۶۳۸۴۳۳</p>
+          <p>📍 آزادگان ۱۶، دفتر درب و پنجره زاراوین</p>
           <a class="btn btn-orange" href="tel:09177638433">تماس مستقیم</a>
         </div>
 
         <form class="form-card" id="quoteForm">
           <div class="form-grid">
             <div class="field">
-              <label for="product">نوع محصول</label>
-              <select id="product" required>
-                <option value="پنجره UPVC">پنجره UPVC</option>
-                <option value="درب UPVC">درب UPVC</option>
-                <option value="پنجره آلومینیومی">پنجره آلومینیومی</option>
-                <option value="درب آلومینیومی">درب آلومینیومی</option>
-                <option value="درب و پنجره دوجداره">درب و پنجره دوجداره</option>
-                <option value="سایر">سایر</option>
+              <label for="productType">نوع محصول</label>
+              <select id="productType" required>
+                <option>درب و پنجره UPVC</option>
+                <option>آلومینیوم ترمال بریک</option>
+                <option>نمای شیشه‌ای</option>
+                <option>درب ضدسرقت</option>
+                <option>سایر</option>
               </select>
             </div>
-
             <div class="field">
               <label for="quantity">تعداد</label>
               <input id="quantity" type="number" min="1" value="1" required>
             </div>
-
             <div class="field">
               <label for="width">عرض هر واحد (متر)</label>
-              <input id="width" type="number" min="0" step="0.01"
-                placeholder="مثلاً 1.5" required>
+              <input id="width" type="number" min="0.01" step="0.01" placeholder="مثلاً 1.5" required>
             </div>
-
             <div class="field">
               <label for="height">ارتفاع هر واحد (متر)</label>
-              <input id="height" type="number" min="0" step="0.01"
-                placeholder="مثلاً 1.2" required>
+              <input id="height" type="number" min="0.01" step="0.01" placeholder="مثلاً 1.2" required>
             </div>
-
             <div class="field">
               <label for="customer">نام مشتری</label>
               <input id="customer" type="text" placeholder="نام شما">
             </div>
-
             <div class="field">
               <label for="phone">شماره تماس</label>
-              <input id="phone" type="tel" placeholder="شماره تماس شما">
+              <input id="phone" type="tel" placeholder="شماره تماس">
             </div>
           </div>
-
           <div class="field">
-            <label for="details">توضیحات تکمیلی</label>
-            <textarea id="details" placeholder="رنگ، نوع شیشه یا توضیحات دیگر"></textarea>
+            <label for="details">توضیحات</label>
+            <textarea id="details" placeholder="رنگ، نوع شیشه یا جزئیات دیگر"></textarea>
           </div>
-
-          <div class="area-result" id="areaResult">
-            مساحت تقریبی: ۰ متر مربع
-          </div>
-
-          <button type="submit" class="btn btn-orange" style="width:100%">
+          <div class="area-result" id="areaResult">مساحت تقریبی: ۰ متر مربع</div>
+          <button class="btn btn-orange" type="submit" style="width:100%">
             ارسال درخواست در واتساپ
           </button>
-
-          <p class="notice">
-            این فرم قیمت نهایی را محاسبه نمی‌کند؛ اندازه‌ها برای ثبت درخواست و
-            بررسی قیمت ارسال می‌شوند.
-          </p>
+          <p class="note">این فرم قیمت قطعی محاسبه نمی‌کند؛ درخواست شما را برای بررسی ارسال می‌کند.</p>
         </form>
       </div>
     </div>
@@ -579,75 +446,60 @@ footer {
 
   <section id="contact">
     <div class="container">
-      <div class="section-head">
-        <div>
-          <h2>ارتباط با زاراوین</h2>
-          <p>برای مشاوره و ثبت درخواست با ما تماس بگیرید.</p>
-        </div>
+      <div class="section-heading">
+        <h2>ارتباط با زاراوین</h2>
+        <p>راه‌های تماس و دسترسی به دفتر</p>
       </div>
-
       <div class="contact-grid">
         <div class="contact-card">
-          <strong>📞 شماره تماس</strong>
+          <strong>☎ شماره تماس</strong>
           <p>۰۹۱۷۷۶۳۸۴۳۳</p>
-          <a class="btn btn-teal" href="tel:09177638433">تماس</a>
+          <a class="btn btn-green" href="tel:09177638433">تماس</a>
         </div>
-
         <div class="contact-card">
           <strong>💬 واتساپ</strong>
-          <p>ارسال پیام به دفتر زاراوین</p>
-          <a class="btn btn-teal"
-             href="https://wa.me/989177638433"
-             target="_blank" rel="noopener">گفت‌وگو در واتساپ</a>
+          <p>ارسال پیام به زاراوین</p>
+          <a class="btn btn-green" href="https://wa.me/989177638433" target="_blank" rel="noopener">ارسال پیام</a>
         </div>
-
         <div class="contact-card">
-          <strong>📍 نشانی دفتر</strong>
+          <strong>📍 آدرس دفتر</strong>
           <p>آزادگان ۱۶، دفتر درب و پنجره زاراوین</p>
-          <a class="btn btn-teal"
-             href="https://www.google.com/maps/search/?api=1&query=آزادگان+16+درب+و+پنجره+زاراوین"
-             target="_blank" rel="noopener">باز کردن نقشه</a>
+          <a class="btn btn-green"
+            href="https://www.google.com/maps/search/?api=1&query=آزادگان+16+درب+و+پنجره+زاراوین"
+            target="_blank" rel="noopener">باز کردن نقشه</a>
         </div>
       </div>
     </div>
   </section>
-
 </main>
 
-<!-- صفحه جداگانه ۱۸ کارت -->
+<!-- صفحه ۱۸ کارت نمونه‌کار -->
 <section class="gallery-page" id="allSamplesPage">
   <div class="container">
     <div class="gallery-top">
       <h2>گالری نمونه‌کارهای زاراوین</h2>
       <button class="btn btn-orange" onclick="showHome()">← بازگشت</button>
     </div>
-    <p class="gallery-description">
-      یکی از ۱۸ کارت را انتخاب کنید تا گالری تصاویر همان نمونه‌کار باز شود.
-    </p>
+    <p class="gallery-desc">برای مشاهده تصاویر، یکی از کارت‌ها را انتخاب کنید.</p>
     <div class="all-grid" id="allSamplesGrid"></div>
   </div>
 </section>
 
-<!-- گالری اختصاصی هر کارت -->
+<!-- گالری هر نمونه‌کار -->
 <section class="gallery-page" id="singleGalleryPage">
   <div class="container">
     <div class="gallery-top">
-      <h2 id="singleGalleryTitle">گالری نمونه‌کار</h2>
-      <button class="btn btn-orange" onclick="backToAllSamples()">← بازگشت به کارت‌ها</button>
+      <h2 id="singleTitle">گالری نمونه‌کار</h2>
+      <button class="btn btn-orange" onclick="backToAll()">← بازگشت به نمونه‌کارها</button>
     </div>
-    <p class="gallery-description" id="singleGalleryDescription">
-      تصاویر نمونه‌کار
-    </p>
-    <div class="photos-grid" id="singleGalleryPhotos"></div>
+    <p class="gallery-desc" id="singleDescription"></p>
+    <div class="photos-grid" id="singlePhotos"></div>
   </div>
 </section>
 
 <footer>
   <div class="container footer-row">
-    <div>
-      <strong>زاراوین | ZARAWIN</strong>
-      <div>درب و پنجره دوجداره</div>
-    </div>
+    <div><strong>زاراوین | ZARAWIN</strong><br>درب و پنجره</div>
     <div>تلفن: ۰۹۱۷۷۶۳۸۴۳۳</div>
     <div>© زاراوین</div>
   </div>
@@ -656,184 +508,126 @@ footer {
 <a class="floating-call" href="tel:09177638433">☎ تماس با زاراوین</a>
 
 <script>
-const photoPool = [
-  "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=80",
-  "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=900&q=80",
-  "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=900&q=80",
-  "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=900&q=80",
-  "https://images.unsplash.com/photo-1600607687644-c7171b42498f?auto=format&fit=crop&w=900&q=80",
-  "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=900&q=80",
-  "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=80",
-  "https://images.unsplash.com/photo-1600566752355-35792bedcfea?auto=format&fit=crop&w=900&q=80",
-  "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=900&q=80"
+const photos = [
+ "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=80",
+ "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=900&q=80",
+ "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=900&q=80",
+ "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=900&q=80",
+ "https://images.unsplash.com/photo-1600607687644-c7171b42498f?auto=format&fit=crop&w=900&q=80",
+ "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=900&q=80",
+ "https://images.unsplash.com/photo-1600566752355-35792bedcfea?auto=format&fit=crop&w=900&q=80",
+ "https://images.unsplash.com/photo-1487958449943-2429e8be8625?auto=format&fit=crop&w=900&q=80"
 ];
 
-const sampleNames = [
-  "پنجره دوجداره مشکی",
-  "درب کشویی مدرن",
-  "پنجره بزرگ پذیرایی",
-  "درب شیشه‌ای حیاط",
-  "پنجره آلومینیومی",
-  "درب ورودی مدرن",
-  "پنجره چندلنگه",
-  "پنجره سفید دوجداره",
-  "درب کشویی تراس",
-  "پنجره فریم باریک",
-  "درب شیشه‌ای بزرگ",
-  "پنجره اتاق",
-  "پنجره نمای مدرن",
-  "درب دوجداره",
-  "پنجره قدی",
-  "پنجره طرح کلاسیک",
-  "درب تراس",
-  "نمونه‌کار ویژه زاراوین"
+const names = [
+ "درب ورودی مدرن","درب کشویی","پنجره دوجداره",
+ "پنجره UPVC","درب و پنجره آلومینیومی","پنجره کشویی",
+ "درب شیشه‌ای","پنجره بزرگ پذیرایی","پنجره فریم باریک",
+ "درب حیاط","پنجره اتاق","درب تراس",
+ "پنجره چندلنگه","درب مدرن","پنجره نمای ساختمان",
+ "درب شیشه‌ای بزرگ","پنجره سفید","نمونه‌کار ویژه زاراوین"
 ];
 
-function makeCard(index, small = false) {
-  const button = document.createElement("button");
-  button.type = "button";
-  button.className = "sample-card";
-  button.innerHTML = `
-    <img src="${photoPool[index % photoPool.length]}"
-      alt="${sampleNames[index]}"
-      loading="lazy">
-    <span class="card-title">${sampleNames[index]}</span>
-  `;
-  button.addEventListener("click", () => openGallery(index));
-  return button;
+function createCard(i){
+  const card=document.createElement("button");
+  card.type="button";
+  card.className="sample-card";
+  card.innerHTML=`<img src="${photos[i%photos.length]}" alt="${names[i]}" loading="lazy">
+    <span class="sample-title">${names[i]}</span>`;
+  card.addEventListener("click",()=>openGallery(i));
+  return card;
 }
 
-// صفحه اصلی فقط چهار کارت کوچک نشان می‌دهد.
-const previewGrid = document.getElementById("previewGrid");
-[0, 1, 2, 3].forEach(i => previewGrid.appendChild(makeCard(i, true)));
+const preview=document.getElementById("previewGrid");
+[0,1,2,3].forEach(i=>preview.appendChild(createCard(i)));
 
-// صفحه گالری شامل ۱۸ کارت است.
-const allSamplesGrid = document.getElementById("allSamplesGrid");
-for (let i = 0; i < 18; i++) {
-  allSamplesGrid.appendChild(makeCard(i));
-}
+const allGrid=document.getElementById("allSamplesGrid");
+for(let i=0;i<18;i++) allGrid.appendChild(createCard(i));
 
-function hideAllPages() {
-  document.getElementById("homePage").style.display = "none";
+function hidePages(){
+  document.getElementById("homePage").style.display="none";
   document.getElementById("allSamplesPage").classList.remove("active");
   document.getElementById("singleGalleryPage").classList.remove("active");
-  document.querySelector("footer").style.display = "none";
-  document.querySelector(".floating-call").style.display = "none";
+  document.querySelector("footer").style.display="none";
+  document.querySelector(".floating-call").style.display="none";
 }
-
-function showHome() {
-  document.getElementById("homePage").style.display = "block";
+function showHome(){
+  document.getElementById("homePage").style.display="block";
   document.getElementById("allSamplesPage").classList.remove("active");
   document.getElementById("singleGalleryPage").classList.remove("active");
-  document.querySelector("footer").style.display = "block";
-  document.querySelector(".floating-call").style.display = "block";
-  history.replaceState(null, "", location.pathname + location.search + "#home");
-  window.scrollTo(0, 0);
+  document.querySelector("footer").style.display="block";
+  document.querySelector(".floating-call").style.display="block";
+  history.replaceState(null,"",location.pathname+location.search+"#home");
+  window.scrollTo(0,0);
 }
-
-function openAllSamples() {
-  hideAllPages();
+function openAllSamples(){
+  hidePages();
   document.getElementById("allSamplesPage").classList.add("active");
-  history.replaceState(null, "", location.pathname + location.search + "#all-samples");
-  window.scrollTo(0, 0);
+  history.replaceState(null,"",location.pathname+location.search+"#all-samples");
+  window.scrollTo(0,0);
 }
-
-function openGallery(index) {
-  hideAllPages();
+function openGallery(i){
+  hidePages();
   document.getElementById("singleGalleryPage").classList.add("active");
-  document.getElementById("singleGalleryTitle").textContent =
-    sampleNames[index];
-  document.getElementById("singleGalleryDescription").textContent =
-    "گالری تصاویر: " + sampleNames[index];
-
-  const gallery = document.getElementById("singleGalleryPhotos");
-  gallery.innerHTML = "";
-
-  // چهار تصویر در گالری هر کارت نمایش داده می‌شود.
-  // برای عکس‌های واقعی هر پروژه باید آدرس‌های اختصاصی جایگزین شوند.
-  for (let j = 0; j < 4; j++) {
-    const img = document.createElement("img");
-    img.src = photoPool[(index + j) % photoPool.length];
-    img.alt = sampleNames[index] + "، تصویر " + (j + 1);
-    img.loading = "lazy";
-    gallery.appendChild(img);
+  document.getElementById("singleTitle").textContent=names[i];
+  document.getElementById("singleDescription").textContent="گالری تصاویر "+names[i];
+  const holder=document.getElementById("singlePhotos");
+  holder.innerHTML="";
+  for(let j=0;j<4;j++){
+    const img=document.createElement("img");
+    img.src=photos[(i+j)%photos.length];
+    img.alt=names[i]+"، تصویر "+(j+1);
+    img.loading="lazy";
+    holder.appendChild(img);
   }
-
-  history.replaceState(null, "", location.pathname + location.search + "#gallery-" + (index + 1));
-  window.scrollTo(0, 0);
+  history.replaceState(null,"",location.pathname+location.search+"#gallery-"+(i+1));
+  window.scrollTo(0,0);
 }
-
-function backToAllSamples() {
+function backToAll(){
   document.getElementById("singleGalleryPage").classList.remove("active");
   document.getElementById("allSamplesPage").classList.add("active");
-  history.replaceState(null, "", location.pathname + location.search + "#all-samples");
-  window.scrollTo(0, 0);
+  history.replaceState(null,"",location.pathname+location.search+"#all-samples");
+  window.scrollTo(0,0);
 }
+function toggleMenu(){document.getElementById("navLinks").classList.toggle("open")}
+function closeMenu(){document.getElementById("navLinks").classList.remove("open")}
 
-function toggleMenu() {
-  document.getElementById("navLinks").classList.toggle("open");
+const widthEl=document.getElementById("width");
+const heightEl=document.getElementById("height");
+const qtyEl=document.getElementById("quantity");
+function updateArea(){
+  const total=(Number(widthEl.value)||0)*(Number(heightEl.value)||0)*(Number(qtyEl.value)||1);
+  document.getElementById("areaResult").textContent=
+    "مساحت تقریبی کل: "+new Intl.NumberFormat("fa-IR",{maximumFractionDigits:2}).format(total)+" متر مربع";
 }
-function closeMenu() {
-  document.getElementById("navLinks").classList.remove("open");
-}
+[widthEl,heightEl,qtyEl].forEach(el=>el.addEventListener("input",updateArea));
 
-// محاسبه مساحت تقریبی
-const widthInput = document.getElementById("width");
-const heightInput = document.getElementById("height");
-const quantityInput = document.getElementById("quantity");
-const areaResult = document.getElementById("areaResult");
-
-function updateArea() {
-  const w = Math.max(0, Number(widthInput.value) || 0);
-  const h = Math.max(0, Number(heightInput.value) || 0);
-  const q = Math.max(1, Number(quantityInput.value) || 1);
-  const total = w * h * q;
-  areaResult.textContent =
-    "مساحت تقریبی کل: " +
-    new Intl.NumberFormat("fa-IR", { maximumFractionDigits: 2 }).format(total) +
-    " متر مربع";
-}
-[widthInput, heightInput, quantityInput].forEach(el =>
-  el.addEventListener("input", updateArea)
-);
-
-document.getElementById("quoteForm").addEventListener("submit", function(event) {
-  event.preventDefault();
-
-  const product = document.getElementById("product").value;
-  const width = widthInput.value;
-  const height = heightInput.value;
-  const quantity = quantityInput.value;
-  const customer = document.getElementById("customer").value || "ثبت نشده";
-  const phone = document.getElementById("phone").value || "ثبت نشده";
-  const details = document.getElementById("details").value || "ندارد";
-  const totalArea = (Number(width) || 0) * (Number(height) || 0) * (Number(quantity) || 1);
-
-  const message =
-`سلام، برای درب و پنجره زاراوین درخواست استعلام قیمت دارم.
-نوع محصول: ${product}
-عرض هر واحد: ${width} متر
-ارتفاع هر واحد: ${height} متر
-تعداد: ${quantity}
-مساحت تقریبی کل: ${totalArea.toFixed(2)} متر مربع
-نام مشتری: ${customer}
+document.getElementById("quoteForm").addEventListener("submit",function(e){
+  e.preventDefault();
+  const type=document.getElementById("productType").value;
+  const w=widthEl.value,h=heightEl.value,q=qtyEl.value;
+  const customer=document.getElementById("customer").value||"ثبت نشده";
+  const phone=document.getElementById("phone").value||"ثبت نشده";
+  const details=document.getElementById("details").value||"ندارد";
+  const area=(Number(w)||0)*(Number(h)||0)*(Number(q)||1);
+  const message=`سلام، برای زاراوین درخواست استعلام قیمت دارم.
+نوع محصول: ${type}
+عرض هر واحد: ${w} متر
+ارتفاع هر واحد: ${h} متر
+تعداد: ${q}
+مساحت تقریبی: ${area.toFixed(2)} متر مربع
+نام: ${customer}
 شماره تماس: ${phone}
 توضیحات: ${details}`;
-
-  const whatsappURL = "https://wa.me/989177638433?text=" + encodeURIComponent(message);
-  window.open(whatsappURL, "_blank", "noopener");
+  window.open("https://wa.me/989177638433?text="+encodeURIComponent(message),"_blank","noopener");
 });
-
 updateArea();
 
-// باز کردن بخش مناسب در صورت ورود با لینک لنگر
-if (location.hash === "#all-samples") {
-  openAllSamples();
-} else if (location.hash.startsWith("#gallery-")) {
-  const n = Number(location.hash.replace("#gallery-", ""));
-  if (n >= 1 && n <= 18) openGallery(n - 1);
+if(location.hash==="#all-samples") openAllSamples();
+else if(location.hash.startsWith("#gallery-")){
+  const n=Number(location.hash.replace("#gallery-",""));
+  if(n>=1&&n<=18) openGallery(n-1);
 }
 </script>
-
 </body>
 </html>
