@@ -66,6 +66,15 @@ footer{text-align:center;background:#004d40;color:white;padding:24px 12px;margin
 .slot .num{position:absolute;z-index:2;top:5px;right:5px;background:#ffffffdf;padding:4px 7px;border-radius:6px;font-size:11px}
 .slot.filled{border:2px solid var(--teal)}
 .slot.filled button{display:none}
+.slot .del{
+ position:absolute;z-index:3;bottom:5px;left:5px;
+ background:rgba(255,80,80,.95);color:#fff;border:0;
+ width:28px;height:28px;border-radius:50%;cursor:pointer;
+ font-size:14px;line-height:1;padding:0;font-weight:900;
+ display:none;align-items:center;justify-content:center;
+}
+.slot.filled .del{display:flex}
+.slot .del:hover{background:#ff3b3b}
 .note{font-size:12px;line-height:2;color:#526b6c}
 @media(max-width:380px){.photo-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.cover{height:115px}}
 @media(max-width:700px){.cards{grid-template-columns:1fr}.steps{grid-template-columns:1fr}.order-row{grid-template-columns:1fr}.order-form{padding:24px 18px}}
@@ -171,7 +180,7 @@ footer{text-align:center;background:#004d40;color:white;padding:24px 12px;margin
       <h2 id="galleryTitle">نمونه‌کارها</h2>
       <button class="close" onclick="closeGallery()">✕ بستن</button>
     </div>
-    <p class="note">برای افزودن عکس، جای خالی را انتخاب کن. بعد از ذخیره، آن جایگاه قفل می‌شود.</p>
+    <p class="note">برای افزودن عکس، جای خالی را انتخاب کن. برای حذف عکس اشتباه، روی ضربدر قرمز بزن.</p>
     <div class="photo-grid" id="photoGrid"></div>
     <p class="note" id="status"></p>
   </div>
@@ -212,6 +221,15 @@ function putImage(id,blob){
  return new Promise((resolve,reject)=>{
   const tx=db.transaction(STORE,"readwrite");
   tx.objectStore(STORE).add({id,blob});
+  tx.oncomplete=resolve;
+  tx.onerror=()=>reject(tx.error);
+  tx.onabort=()=>reject(tx.error);
+ });
+}
+function deleteImage(id){
+ return new Promise((resolve,reject)=>{
+  const tx=db.transaction(STORE,"readwrite");
+  tx.objectStore(STORE).delete(id);
   tx.oncomplete=resolve;
   tx.onerror=()=>reject(tx.error);
   tx.onabort=()=>reject(tx.error);
@@ -268,7 +286,7 @@ async function chooseCover(section){
  if(busy)return;
  try{
   if(await getImage(coverId(section))){
-   alert("عکس این کارت قبلاً انتخاب شده و قفل است.");
+   alert("عکس این کارت قبلاً انتخاب شده. برای حذف، وارد نمونه‌کارها شو و روی ضربدر قرمز بزن.");
    return;
   }
   activeSection=section;
@@ -296,16 +314,36 @@ async function openGallery(section){
   cell.append(num,button);
   grid.appendChild(cell);
   const saved=await getImage(makeId(section,slot));
-  if(saved)showSlot(cell,saved.blob);
+  if(saved)showSlot(cell,saved.blob,slot);
  }
  document.getElementById("status").textContent="عکس‌های انتخاب‌شده در مرورگر ذخیره می‌شوند.";
 }
-function showSlot(cell,blob){
+function showSlot(cell,blob,slot){
  const img=document.createElement("img");
  img.alt="نمونه‌کار ذخیره‌شده";
  img.src=URL.createObjectURL(blob);
  cell.classList.add("filled");
  cell.appendChild(img);
+
+ const del=document.createElement("button");
+ del.className="del";
+ del.textContent="✕";
+ del.title="حذف این عکس";
+ del.onclick=(e)=>{
+  e.stopPropagation();
+  if(confirm("این عکس حذف شود؟")){
+   removeSlotImage(slot);
+  }
+ };
+ cell.appendChild(del);
+}
+async function removeSlotImage(slot){
+ try{
+  await deleteImage(makeId(activeSection,slot));
+  await openGallery(activeSection);
+ }catch(e){
+  alert("حذف ناموفق بود.");
+ }
 }
 async function chooseSlot(slot){
  if(busy)return;
@@ -352,12 +390,12 @@ document.getElementById("picker").addEventListener("change",async function(){
    displayImage(document.getElementById("cover-"+section),blob);
   }else if(section===activeSection){
    const cell=document.getElementById("photoGrid").children[slot];
-   if(cell)showSlot(cell,blob);
+   if(cell)showSlot(cell,blob,slot);
   }
-  document.getElementById("status").textContent="عکس ذخیره شد. جایگاه قفل شده است.";
+  document.getElementById("status").textContent="عکس ذخیره شد.";
  }catch(e){
   console.error(e);
-  alert("ذخیره عکس ناموفق بود. فضای ذخیره‌سازی مرورگر را بررسی کن.");
+  alert("ذخیره عکس ناموفق بود.");
  }finally{busy=false;}
 });
 function closeGallery(){document.getElementById("galleryModal").classList.remove("open");}
@@ -388,7 +426,7 @@ function sendToWhatsapp(e){
   db=await openDB();
   await loadCovers();
  }catch(e){
-  alert("مرورگر امکان ذخیره عکس‌ها را فراهم نکرد. سایت را در مرورگر اصلی گوشی باز کن.");
+  alert("مرورگر امکان ذخیره عکس‌ها را فراهم نکرد.");
  }
 })();
 </script>
