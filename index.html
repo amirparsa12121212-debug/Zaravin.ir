@@ -19,13 +19,15 @@ header p{color:#d7f5ef}
 .intro{text-align:center;padding:18px}
 h2{color:var(--dark)}
 .cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px;margin-top:16px}
-.card{padding:0;overflow:hidden;border:1px solid #ffffff;background:#ffffffc9;border-radius:17px;box-shadow:0 5px 18px #164b4b12;cursor:pointer;transition:.3s}
+.card{padding:0;overflow:hidden;border:1px solid #ffffff;background:#ffffffc9;border-radius:17px;box-shadow:0 5px 18px #164b4b12;transition:.3s}
 .card:hover{transform:translateY(-5px);box-shadow:0 15px 38px #164b4b1f}
-.card-content{padding:14px}
-.card h3{font-size:15px;margin:0 0 8px;color:var(--dark)}
-.card p{font-size:12px;color:#5e7071;margin:0 0 10px;line-height:1.7}
-.card .mini-btn{display:inline-block;background:var(--teal);color:#fff;padding:8px 14px;border-radius:9px;font-size:12px;font-weight:700;transition:.3s}
-.card:hover .mini-btn{background:var(--orange)}
+.cover{height:145px;background:linear-gradient(135deg,#b2dfdb,#ffe0b2);position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.cover img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
+.cover-placeholder{text-align:center;color:var(--dark);padding:10px;font-size:14px}
+.cover-placeholder b{font-size:30px;display:block;margin-bottom:8px}
+.card-content{padding:12px}
+.card h3{font-size:14px;margin:0 0 10px;color:var(--dark)}
+.card-content button+button{margin-top:7px}
 button,.btn{font-family:inherit;border:0;border-radius:10px;padding:11px 10px;cursor:pointer;font-size:13px;text-align:center;text-decoration:none;display:block;width:100%}
 .primary{background:var(--teal);color:white}
 .orange{background:var(--orange);color:#34200c}
@@ -65,7 +67,7 @@ footer{text-align:center;background:#004d40;color:white;padding:24px 12px;margin
 .slot.filled{border:2px solid var(--teal)}
 .slot.filled button{display:none}
 .note{font-size:12px;line-height:2;color:#526b6c}
-@media(max-width:380px){.photo-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:380px){.photo-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.cover{height:115px}}
 @media(max-width:700px){.cards{grid-template-columns:1fr}.steps{grid-template-columns:1fr}.order-row{grid-template-columns:1fr}.order-form{padding:24px 18px}}
 </style>
 </head>
@@ -169,7 +171,7 @@ footer{text-align:center;background:#004d40;color:white;padding:24px 12px;margin
       <h2 id="galleryTitle">نمونه‌کارها</h2>
       <button class="close" onclick="closeGallery()">✕ بستن</button>
     </div>
-    <p class="note">برای افزودن عکس، جای خالی را انتخاب کن.</p>
+    <p class="note">برای افزودن عکس، جای خالی را انتخاب کن. بعد از ذخیره، آن جایگاه قفل می‌شود.</p>
     <div class="photo-grid" id="photoGrid"></div>
     <p class="note" id="status"></p>
   </div>
@@ -216,6 +218,7 @@ function putImage(id,blob){
  });
 }
 function makeId(section,slot){return "section-"+section+"-slot-"+slot}
+function coverId(section){return "cover-"+section}
 
 function renderCards(){
  const root=document.getElementById("cards");
@@ -223,20 +226,55 @@ function renderCards(){
  names.forEach((name,i)=>{
   const card=document.createElement("article");
   card.className="card";
+
+  const cover=document.createElement("div");
+  cover.className="cover";
+  cover.id="cover-"+i;
+  const placeholder=document.createElement("div");
+  placeholder.className="cover-placeholder";
+  placeholder.innerHTML="<b>"+icons[i]+"</b>انتخاب عکس برای کارت";
+  cover.appendChild(placeholder);
+
   const content=document.createElement("div");
   content.className="card-content";
   const title=document.createElement("h3");
   title.textContent=name;
-  const desc=document.createElement("p");
-  desc.textContent="مشاهده و افزودن نمونه‌کارهای این بخش";
-  const btn=document.createElement("span");
-  btn.className="mini-btn";
-  btn.textContent="مشاهده نمونه‌کارها";
-  content.append(title,desc,btn);
-  card.appendChild(content);
-  card.onclick=()=>openGallery(i);
+  const choose=document.createElement("button");
+  choose.className="light";
+  choose.textContent="🖼️ انتخاب عکس کارت از گالری";
+  choose.onclick=(e)=>{e.stopPropagation();chooseCover(i);};
+  const open=document.createElement("button");
+  open.className="primary";
+  open.textContent="مشاهده نمونه‌کارها";
+  open.onclick=(e)=>{e.stopPropagation();openGallery(i);};
+  content.append(title,choose,open);
+  card.append(cover,content);
   root.appendChild(card);
  });
+}
+function displayImage(container,blob){
+ const img=document.createElement("img");
+ img.alt="عکس نمونه‌کار زاراوین";
+ img.src=URL.createObjectURL(blob);
+ container.replaceChildren(img);
+}
+async function loadCovers(){
+ for(let i=0;i<4;i++){
+  const saved=await getImage(coverId(i));
+  if(saved)displayImage(document.getElementById("cover-"+i),saved.blob);
+ }
+}
+async function chooseCover(section){
+ if(busy)return;
+ try{
+  if(await getImage(coverId(section))){
+   alert("عکس این کارت قبلاً انتخاب شده و قفل است.");
+   return;
+  }
+  activeSection=section;
+  activeMode="cover";
+  document.getElementById("picker").click();
+ }catch(e){alert("خواندن اطلاعات عکس ناموفق بود.");}
 }
 async function openGallery(section){
  activeSection=section;
@@ -304,20 +342,22 @@ document.getElementById("picker").addEventListener("change",async function(){
  if(!file||busy)return;
  if(!file.type.startsWith("image/")){alert("یک عکس انتخاب کن.");return;}
  busy=true;
- const section=activeSection,slot=activeSlot;
- const id=makeId(section,slot);
+ const section=activeSection,slot=activeSlot,mode=activeMode;
+ const id=mode==="cover"?coverId(section):makeId(section,slot);
  try{
   if(await getImage(id)){alert("این جایگاه قبلاً پر شده است.");return;}
   const blob=await compress(file);
   await putImage(id,blob);
-  if(section===activeSection){
+  if(mode==="cover"){
+   displayImage(document.getElementById("cover-"+section),blob);
+  }else if(section===activeSection){
    const cell=document.getElementById("photoGrid").children[slot];
    if(cell)showSlot(cell,blob);
   }
-  document.getElementById("status").textContent="عکس ذخیره شد.";
+  document.getElementById("status").textContent="عکس ذخیره شد. جایگاه قفل شده است.";
  }catch(e){
   console.error(e);
-  alert("ذخیره عکس ناموفق بود.");
+  alert("ذخیره عکس ناموفق بود. فضای ذخیره‌سازی مرورگر را بررسی کن.");
  }finally{busy=false;}
 });
 function closeGallery(){document.getElementById("galleryModal").classList.remove("open");}
@@ -346,8 +386,9 @@ function sendToWhatsapp(e){
  renderCards();
  try{
   db=await openDB();
+  await loadCovers();
  }catch(e){
-  alert("مرورگر امکان ذخیره عکس‌ها را فراهم نکرد.");
+  alert("مرورگر امکان ذخیره عکس‌ها را فراهم نکرد. سایت را در مرورگر اصلی گوشی باز کن.");
  }
 })();
 </script>
