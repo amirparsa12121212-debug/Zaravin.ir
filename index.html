@@ -1,440 +1,540 @@
-
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#087f78">
-<title>درب و پنجره زاراوین | Zarawin</title>
-<meta name="description" content="درب و پنجره زاراوین، مشاوره و استعلام قیمت درب و پنجره UPVC و آلومینیومی">
+<title>درب و پنجره زاراوین | ZARAWIN</title>
+
 <style>
 :root {
   --green: #087f78;
-  --green-dark: #075c58;
-  --orange: #ff861f;
+  --dark-green: #075c58;
+  --orange: #d96b16;
   --bg: #f0f8f7;
   --text: #173b3a;
-  --muted: #667e7c;
-  --glass: rgba(255,255,255,.76);
-  --border: rgba(255,255,255,.85);
-  --shadow: 0 12px 35px rgba(9,92,86,.10);
+  --glass: rgba(255,255,255,.78);
+  --shadow: 0 10px 30px rgba(7,92,88,.12);
 }
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
+
 html {
   scroll-behavior: smooth;
 }
+
 body {
   font-family: Tahoma, Arial, sans-serif;
-  background:
-    radial-gradient(circle at 10% 5%, #d5f3ed 0, transparent 28%),
-    radial-gradient(circle at 95% 45%, #ffead8 0, transparent 24%),
-    var(--bg);
+  background: var(--bg);
   color: var(--text);
   line-height: 1.9;
 }
+
 a {
-  color: inherit;
   text-decoration: none;
+  color: inherit;
 }
+
 button, input, select, textarea {
   font: inherit;
 }
-button, .btn {
+
+button {
   cursor: pointer;
 }
+
 .container {
-  width: min(1120px, 92%);
+  width: 92%;
+  max-width: 1150px;
   margin: auto;
 }
+
 .glass {
   background: var(--glass);
-  border: 1px solid var(--border);
+  border: 1px solid white;
   box-shadow: var(--shadow);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border-radius: 22px;
+  backdrop-filter: blur(14px);
+  border-radius: 20px;
 }
+
 header {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(240,248,247,.88);
-  backdrop-filter: blur(16px);
-  border-bottom: 1px solid rgba(8,127,120,.12);
+  background: rgba(240,248,247,.95);
+  border-bottom: 1px solid #d9ebe7;
 }
+
 .nav {
-  min-height: 76px;
+  min-height: 72px;
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  gap: 15px;
+  align-items: center;
+  gap: 12px;
 }
+
 .logo {
   font-size: 23px;
-  font-weight: 900;
+  font-weight: bold;
   color: var(--green);
 }
+
 .logo span {
   color: var(--orange);
 }
+
 nav {
   display: flex;
-  gap: 19px;
-  align-items: center;
+  gap: 18px;
   font-size: 13px;
 }
+
 nav a:hover {
   color: var(--orange);
 }
+
 .menu-btn {
   display: none;
+  border: 0;
   background: var(--green);
   color: white;
-  border: 0;
-  padding: 8px 13px;
+  padding: 7px 12px;
   border-radius: 10px;
 }
+
 .hero {
-  padding: 65px 0 45px;
+  padding: 55px 0;
 }
+
 .hero-grid {
   display: grid;
-  grid-template-columns: 1.05fr .95fr;
+  grid-template-columns: 1fr 1fr;
   gap: 25px;
   align-items: center;
 }
-.hero-content {
-  padding: 28px 8px;
+
+.hero-text {
+  padding: 20px 5px;
 }
-.eyebrow {
+
+.badge {
   display: inline-block;
-  color: var(--green);
-  background: #d9f3ed;
   padding: 5px 13px;
   border-radius: 30px;
+  background: #d8f0e9;
+  color: var(--green);
   font-size: 13px;
-  font-weight: bold;
 }
+
 h1 {
-  font-size: clamp(28px, 4vw, 44px);
-  line-height: 1.65;
-  margin: 18px 0;
+  font-size: clamp(28px,4vw,43px);
+  line-height: 1.7;
+  margin: 15px 0;
 }
+
 h1 span {
   color: var(--green);
 }
-.hero-content p {
-  color: var(--muted);
-  margin-bottom: 24px;
+
+.hero-text p {
+  color: #647a78;
+  margin-bottom: 20px;
 }
-.actions {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
+
+.hero-image {
+  padding: 10px;
 }
+
+.hero-image img {
+  width: 100%;
+  height: 340px;
+  object-fit: cover;
+  display: block;
+  border-radius: 14px;
+}
+
 .btn {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  border: 0;
-  padding: 11px 20px;
-  border-radius: 12px;
+  display: inline-block;
+  padding: 10px 18px;
+  border-radius: 11px;
+  border: none;
   font-weight: bold;
-  transition: .2s;
+  text-align: center;
 }
-.btn:hover {
-  transform: translateY(-2px);
-}
+
 .primary {
   background: var(--green);
   color: white;
 }
+
 .orange {
   background: var(--orange);
   color: white;
 }
+
 .light {
   background: white;
   color: var(--green);
-  border: 1px solid #d5eae6;
+  border: 1px solid #d6e8e4;
 }
-.hero-image {
-  padding: 12px;
-  overflow: hidden;
-  position: relative;
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
 }
-.hero-image img {
-  display: block;
-  width: 100%;
-  height: 355px;
-  object-fit: cover;
-  border-radius: 16px;
-}
-.hero-tag {
-  position: absolute;
-  bottom: 24px;
-  right: 24px;
-  left: 24px;
-  padding: 12px;
-  background: rgba(255,255,255,.9);
-  border-radius: 14px;
-  font-weight: bold;
-}
+
 section {
-  padding: 42px 0;
+  padding: 38px 0;
 }
-.section-head {
+
+.section-title {
   text-align: center;
   margin-bottom: 25px;
 }
-.section-head h2 {
-  font-size: clamp(23px, 3vw, 31px);
-  margin-bottom: 7px;
+
+.section-title h2 {
+  font-size: 29px;
 }
-.section-head p {
-  color: var(--muted);
-  font-size: 14px;
-}
-.cards {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0,1fr));
-  gap: 16px;
-}
-.card {
-  overflow: hidden;
-  transition: transform .2s;
-}
-.card:hover {
-  transform: translateY(-4px);
-}
-.card img {
-  width: 100%;
-  height: 175px;
-  display: block;
-  object-fit: cover;
-}
-.card-content {
-  padding: 17px;
-}
-.card h3 {
-  color: var(--green-dark);
-  margin-bottom: 7px;
-  font-size: 17px;
-}
-.card p {
-  color: var(--muted);
-  font-size: 13px;
-}
-.card .btn {
-  margin-top: 13px;
-  width: 100%;
-  padding: 9px;
-  font-size: 13px;
-}
-.info-grid {
-  display: grid;
-  grid-template-columns: repeat(3,1fr);
-  gap: 15px;
-}
-.info-card {
-  padding: 22px;
-  text-align: center;
-}
-.info-card .symbol {
-  font-size: 30px;
-  margin-bottom: 5px;
-}
-.info-card h3 {
-  color: var(--green);
-  font-size: 17px;
-}
-.info-card p {
-  color: var(--muted);
+
+.section-title p {
+  color: #718380;
   font-size: 13px;
 }
 
-/* فرم استعلام قیمت */
-.quote-wrap {
+/* چهار دسته اصلی نمونه‌کار */
+
+.portfolio-grid {
   display: grid;
-  grid-template-columns: .75fr 1.25fr;
-  gap: 22px;
+  grid-template-columns: repeat(4,minmax(0,1fr));
+  gap: 16px;
+}
+
+.portfolio-card {
+  overflow: hidden;
+  transition: .2s;
+}
+
+.portfolio-card:hover {
+  transform: translateY(-4px);
+}
+
+.portfolio-card img {
+  width: 100%;
+  height: 175px;
+  object-fit: cover;
+  display: block;
+}
+
+.portfolio-content {
+  padding: 15px;
+}
+
+.portfolio-content h3 {
+  color: var(--dark-green);
+  font-size: 16px;
+  margin-bottom: 9px;
+}
+
+.portfolio-content button {
+  width: 100%;
+  margin-top: 7px;
+}
+
+/* پنجره نمایش ۱۵ جای عکس */
+
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: rgba(5,35,34,.78);
+  padding: 15px;
+  overflow-y: auto;
+}
+
+.modal.show {
+  display: block;
+}
+
+.modal-box {
+  width: 100%;
+  max-width: 950px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #f0f8f7;
+  border-radius: 20px;
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 17px;
+}
+
+.modal-header h2 {
+  font-size: 20px;
+  color: var(--green);
+}
+
+.close-btn {
+  background: #ffe4d0;
+  color: #963d0c;
+  border: 0;
+  border-radius: 10px;
+  padding: 7px 14px;
+}
+
+.sample-grid {
+  display: grid;
+  grid-template-columns: repeat(3,minmax(0,1fr));
+  gap: 12px;
+}
+
+.sample-slot {
+  min-height: 150px;
+  position: relative;
+  overflow: hidden;
+  background: white;
+  border: 1px dashed #8ebdb5;
+  border-radius: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sample-slot img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+}
+
+.upload-label {
+  display: flex;
+  min-height: 150px;
+  width: 100%;
+  padding: 10px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: var(--green);
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.upload-label b {
+  font-size: 30px;
+}
+
+.upload-label input {
+  display: none;
+}
+
+.remove-image {
+  position: absolute;
+  top: 7px;
+  left: 7px;
+  border: none;
+  border-radius: 8px;
+  background: #b42318;
+  color: white;
+  padding: 4px 9px;
+  font-size: 12px;
+}
+
+.sample-note {
+  margin-top: 14px;
+  font-size: 12px;
+  color: #657a77;
+}
+
+/* استعلام قیمت */
+
+.quote-grid {
+  display: grid;
+  grid-template-columns: .8fr 1.2fr;
+  gap: 20px;
   align-items: start;
 }
+
 .quote-intro {
-  padding: 25px;
   background: var(--green);
   color: white;
-  border-radius: 22px;
-  position: sticky;
-  top: 95px;
+  border-radius: 20px;
+  padding: 24px;
 }
-.quote-intro h3 {
-  font-size: 23px;
-  margin-bottom: 12px;
-}
+
 .quote-intro p {
+  color: #e1f4f0;
   font-size: 14px;
-  color: #e0f5f1;
+  margin-top: 10px;
 }
-.quote-intro .mini {
-  margin-top: 22px;
-  padding-top: 15px;
-  border-top: 1px solid rgba(255,255,255,.25);
-}
+
 .quote-form {
-  padding: 25px;
+  padding: 23px;
 }
+
 .form-grid {
   display: grid;
-  grid-template-columns: repeat(2,minmax(0,1fr));
-  gap: 15px;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
 }
+
 .field {
   display: flex;
   flex-direction: column;
   gap: 6px;
 }
+
 .field.full {
   grid-column: 1/-1;
 }
+
 .field label {
   font-size: 13px;
   font-weight: bold;
 }
+
 .field input,
 .field select,
 .field textarea {
   width: 100%;
-  padding: 11px 12px;
-  border: 1px solid #d9e8e5;
-  border-radius: 11px;
-  background: rgba(255,255,255,.9);
-  color: var(--text);
+  padding: 11px;
+  border: 1px solid #d7e7e3;
+  background: white;
+  border-radius: 10px;
   outline: none;
 }
+
 .field input:focus,
 .field select:focus,
 .field textarea:focus {
   border-color: var(--green);
-  box-shadow: 0 0 0 3px rgba(8,127,120,.09);
 }
+
 .field textarea {
-  min-height: 90px;
+  min-height: 80px;
   resize: vertical;
 }
-.field small {
-  color: var(--muted);
-  font-size: 11px;
-}
+
 .area-box {
-  margin-top: 17px;
-  padding: 15px;
-  background: #e4f5f0;
-  border: 1px solid #cce9e2;
-  border-radius: 14px;
+  margin-top: 15px;
+  padding: 14px;
+  background: #e1f4ed;
+  border-radius: 12px;
   display: flex;
-  justify-content: space-between;
-  gap: 12px;
-  align-items: center;
   flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 10px;
 }
+
 .area-box strong {
-  color: var(--green-dark);
-  font-size: 20px;
+  color: var(--green);
 }
-.quote-form .submit {
+
+.submit {
   width: 100%;
-  margin-top: 17px;
+  margin-top: 15px;
 }
+
 .note {
-  margin-top: 10px;
   font-size: 11px;
-  color: var(--muted);
+  color: #718380;
+  margin-top: 10px;
 }
+
+/* تماس */
+
 .contact-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 18px;
 }
+
 .contact-card {
-  padding: 23px;
+  padding: 22px;
 }
+
 .contact-card h3 {
   color: var(--green);
   margin-bottom: 10px;
 }
+
 .contact-card p {
   margin-bottom: 10px;
   overflow-wrap: anywhere;
 }
+
 .map-frame {
   width: 100%;
-  height: 300px;
+  height: 280px;
   border: 0;
-  border-radius: 16px;
-  margin-top: 14px;
+  border-radius: 14px;
+  margin-top: 10px;
 }
+
 .map-actions {
   display: flex;
-  flex-wrap: wrap;
   gap: 9px;
+  flex-wrap: wrap;
   margin-top: 12px;
 }
+
 footer {
-  margin-top: 35px;
+  margin-top: 30px;
+  padding: 28px 0;
   background: #073f3d;
   color: white;
-  padding: 28px 0;
   text-align: center;
 }
-footer .logo {
-  color: white;
-}
+
 footer p {
-  color: #c5e5df;
   font-size: 12px;
-  margin-top: 7px;
+  color: #c5e5df;
+  margin-top: 5px;
 }
+
 .whatsapp-float {
   position: fixed;
-  left: 17px;
-  bottom: 18px;
-  z-index: 99;
-  background: #1fae65;
+  z-index: 90;
+  bottom: 16px;
+  left: 15px;
+  background: #1eaa61;
   color: white;
-  border-radius: 50px;
-  padding: 12px 17px;
-  box-shadow: 0 6px 20px #0002;
+  padding: 11px 15px;
+  border-radius: 30px;
+  box-shadow: var(--shadow);
   font-weight: bold;
 }
+
 @media(max-width:850px) {
-  .hero-grid, .quote-wrap {
+  .hero-grid,
+  .quote-grid {
     grid-template-columns: 1fr;
   }
-  .hero {
-    padding-top: 30px;
-  }
-  .hero-image img {
-    height: 290px;
-  }
-  .cards {
+
+  .portfolio-grid {
     grid-template-columns: repeat(2,minmax(0,1fr));
   }
-  .quote-intro {
-    position: static;
+
+  .hero-image img {
+    height: 280px;
   }
 }
+
 @media(max-width:600px) {
-  .nav {
-    min-height: 65px;
-  }
   .menu-btn {
     display: block;
   }
+
   nav {
     display: none;
     position: absolute;
@@ -442,50 +542,47 @@ footer p {
     right: 4%;
     left: 4%;
     background: white;
-    padding: 17px;
-    border-radius: 15px;
-    box-shadow: var(--shadow);
+    border-radius: 13px;
+    padding: 15px;
     flex-direction: column;
-    align-items: stretch;
-    gap: 9px;
+    box-shadow: var(--shadow);
   }
+
   nav.open {
     display: flex;
   }
-  nav a {
-    padding: 7px;
+
+  .sample-grid {
+    grid-template-columns: repeat(2,minmax(0,1fr));
   }
-  .cards {
-    gap: 10px;
-  }
-  .card img {
+
+  .portfolio-card img {
     height: 125px;
   }
-  .card-content {
-    padding: 12px;
+
+  .portfolio-content {
+    padding: 11px;
   }
-  .card h3 {
-    font-size: 14px;
+
+  .portfolio-content h3 {
+    font-size: 13px;
   }
-  .card p {
-    font-size: 12px;
-  }
-  .info-grid, .contact-grid {
+
+  .form-grid,
+  .contact-grid {
     grid-template-columns: 1fr;
   }
-  .form-grid {
-    grid-template-columns: 1fr;
-  }
+
   .field.full {
     grid-column: auto;
   }
-  .quote-form {
-    padding: 16px;
+
+  .modal-box {
+    padding: 12px;
   }
-  .whatsapp-float {
-    left: 10px;
-    bottom: 10px;
-    font-size: 13px;
+
+  .modal-header h2 {
+    font-size: 16px;
   }
 }
 </style>
@@ -495,13 +592,13 @@ footer p {
 
 <header>
   <div class="container nav">
-    <a class="logo" href="#home">زاراوین <span>ZARAWIN</span></a>
-    <button class="menu-btn" id="menuBtn" type="button"
-      aria-label="باز کردن منو" aria-expanded="false">☰ منو</button>
+    <a href="#home" class="logo">زاراوین <span>ZARAWIN</span></a>
+
+    <button class="menu-btn" id="menuBtn" type="button">☰ منو</button>
+
     <nav id="mainNav">
       <a href="#home">صفحه اصلی</a>
-      <a href="#services">خدمات</a>
-      <a href="#advantages">مزایای ما</a>
+      <a href="#portfolio">نمونه‌کارها</a>
       <a href="#quote">استعلام قیمت</a>
       <a href="#contact">تماس با ما</a>
     </nav>
@@ -509,349 +606,539 @@ footer p {
 </header>
 
 <main>
-  <section class="hero" id="home">
-    <div class="container hero-grid">
-      <div class="hero-content">
-        <span class="eyebrow">کیفیت، زیبایی و دوام</span>
-        <h1>انتخابی مطمئن برای <span>درب و پنجره</span></h1>
-        <p>
-          در زاراوین، برای انتخاب درب و پنجره مناسب ساختمان خود
-          اطلاعات بگیرید و مشخصات پروژه‌تان را برای استعلام قیمت ارسال کنید.
-        </p>
-        <div class="actions">
-          <a href="#quote" class="btn orange">استعلام قیمت</a>
-          <a href="#services" class="btn primary">مشاهده خدمات</a>
-        </div>
-      </div>
 
-      <div class="hero-image glass">
+<section class="hero" id="home">
+  <div class="container hero-grid">
+
+    <div class="hero-text">
+      <span class="badge">کیفیت و زیبایی در ساختمان</span>
+
+      <h1>
+        درب و پنجره زاراوین؛
+        <span>انتخابی مطمئن</span>
+      </h1>
+
+      <p>
+        برای ساختمان خود درب و پنجره مناسب انتخاب کنید.
+        نمونه‌کارها را ببینید و برای ابعاد موردنظرتان استعلام قیمت بگیرید.
+      </p>
+
+      <div class="actions">
+        <a href="#portfolio" class="btn primary">مشاهده نمونه‌کارها</a>
+        <a href="#quote" class="btn orange">استعلام قیمت</a>
+      </div>
+    </div>
+
+    <div class="hero-image glass">
+      <img src="grok_1791751943067.jpg"
+        alt="درب و پنجره زاراوین"
+        onerror="this.onerror=null;this.src='grok_1791751938860.jpg'">
+    </div>
+
+  </div>
+</section>
+
+<!-- چهار کارت نمونه‌کار اصلی -->
+
+<section id="portfolio">
+  <div class="container">
+
+    <div class="section-title">
+      <h2>نمونه‌کارهای زاراوین</h2>
+      <p>دسته موردنظر را انتخاب کنید تا نمونه‌کارهای آن را مشاهده کنید.</p>
+    </div>
+
+    <div class="portfolio-grid">
+
+      <article class="portfolio-card glass">
         <img src="grok_1791751943067.jpg"
-          alt="نمونه درب و پنجره زاراوین"
+          alt="درب و پنجره UPVC"
           onerror="this.onerror=null;this.src='grok_1791751938860.jpg'">
-        <div class="hero-tag">درب و پنجره زاراوین | UPVC و آلومینیوم</div>
-      </div>
-    </div>
-  </section>
 
-  <section id="services">
-    <div class="container">
-      <div class="section-head">
-        <h2>خدمات زاراوین</h2>
-        <p>راهکارهایی برای انتخاب درب و پنجره متناسب با ساختمان شما</p>
-      </div>
-
-      <div class="cards">
-        <article class="card glass">
-          <img src="grok_1791751943067.jpg"
-            alt="درب و پنجره UPVC"
-            onerror="this.onerror=null;this.src='grok_1791751938860.jpg'">
-          <div class="card-content">
-            <h3>درب و پنجره UPVC</h3>
-            <p>انتخابی مناسب برای عایق‌بندی و آسایش بیشتر ساختمان.</p>
-            <a href="#quote" class="btn light">استعلام قیمت</a>
-          </div>
-        </article>
-
-        <article class="card glass">
-          <img src="grok_1791751938860.jpg"
-            alt="درب و پنجره آلومینیومی"
-            onerror="this.onerror=null;this.src='grok_1791751925348.jpg'">
-          <div class="card-content">
-            <h3>درب و پنجره آلومینیومی</h3>
-            <p>راهکاری کاربردی برای طرح‌های متنوع ساختمانی.</p>
-            <a href="#quote" class="btn light">استعلام قیمت</a>
-          </div>
-        </article>
-
-        <article class="card glass">
-          <img src="grok_1791751925348.jpg"
-            alt="پنجره آلومینیوم ترمال بریک"
-            onerror="this.onerror=null;this.src='grok_1791751923005.jpg'">
-          <div class="card-content">
-            <h3>آلومینیوم ترمال بریک</h3>
-            <p>گزینه‌ای با مانع حرارتی برای بهبود عملکرد پنجره.</p>
-            <a href="#quote" class="btn light">استعلام قیمت</a>
-          </div>
-        </article>
-
-        <article class="card glass">
-          <img src="grok_1791751923005.jpg"
-            alt="درب و پنجره ساختمانی"
-            onerror="this.onerror=null;this.src='grok_1791751943067.jpg'">
-          <div class="card-content">
-            <h3>مشاوره انتخاب محصول</h3>
-            <p>بررسی ابعاد و نیازهای پروژه پیش از ثبت سفارش.</p>
-            <a href="#quote" class="btn light">ثبت درخواست</a>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section id="advantages">
-    <div class="container">
-      <div class="section-head">
-        <h2>چرا زاراوین؟</h2>
-        <p>انتخاب بهتر با بررسی مشخصات و نیازهای واقعی پروژه</p>
-      </div>
-
-      <div class="info-grid">
-        <article class="info-card glass">
-          <div class="symbol">📐</div>
-          <h3>بررسی ابعاد</h3>
-          <p>ثبت طول و عرض برای بررسی اولیه درخواست شما.</p>
-        </article>
-        <article class="info-card glass">
-          <div class="symbol">🪟</div>
-          <h3>تنوع محصولات</h3>
-          <p>امکان درخواست استعلام برای انواع درب و پنجره.</p>
-        </article>
-        <article class="info-card glass">
-          <div class="symbol">📱</div>
-          <h3>ارتباط آسان</h3>
-          <p>ارسال مشخصات سفارش از طریق واتساپ.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- فرم استعلام قیمت با طول و عرض -->
-  <section id="quote">
-    <div class="container">
-      <div class="section-head">
-        <h2>استعلام قیمت درب و پنجره</h2>
-        <p>ابعاد و مشخصات را وارد کنید تا درخواست شما در واتساپ آماده شود.</p>
-      </div>
-
-      <div class="quote-wrap">
-        <aside class="quote-intro">
-          <h3>استعلام قیمت</h3>
-          <p>
-            نوع محصول و اندازه‌های موردنظر را ثبت کنید.
-            مساحت تقریبی به‌صورت خودکار محاسبه می‌شود.
-          </p>
-          <div class="mini">
-            <strong>درب و پنجره زاراوین</strong>
-            <p>تلفن: ۰۹۱۷۷۶۳۸۴۳۳</p>
-            <p>آزادگان ۱۶، دفتر درب و پنجره زاراوین</p>
-          </div>
-        </aside>
-
-        <form class="quote-form glass" id="quoteForm">
-          <div class="form-grid">
-            <div class="field full">
-              <label for="product">نوع محصول</label>
-              <select id="product" required>
-                <option value="">انتخاب کنید</option>
-                <option>درب و پنجره UPVC</option>
-                <option>درب و پنجره آلومینیومی</option>
-                <option>آلومینیوم ترمال بریک</option>
-                <option>درب</option>
-                <option>پنجره</option>
-                <option>سایر موارد</option>
-              </select>
-            </div>
-
-            <div class="field">
-              <label for="width">عرض (سانتی‌متر)</label>
-              <input id="width" type="number" min="1" max="100000"
-                step="any" placeholder="مثلاً ۱۲۰" required>
-            </div>
-
-            <div class="field">
-              <label for="height">طول / ارتفاع (سانتی‌متر)</label>
-              <input id="height" type="number" min="1" max="100000"
-                step="any" placeholder="مثلاً ۱۵۰" required>
-            </div>
-
-            <div class="field">
-              <label for="quantity">تعداد</label>
-              <input id="quantity" type="number" min="1" max="10000"
-                step="1" value="1" required>
-            </div>
-
-            <div class="field">
-              <label for="customerName">نام مشتری (اختیاری)</label>
-              <input id="customerName" type="text" maxlength="80"
-                placeholder="نام شما">
-            </div>
-
-            <div class="field full">
-              <label for="details">توضیحات (اختیاری)</label>
-              <textarea id="details" maxlength="1000"
-                placeholder="رنگ، نوع بازشو یا توضیحات پروژه"></textarea>
-            </div>
-          </div>
-
-          <div class="area-box">
-            <span>
-              مساحت هر واحد:
-              <strong id="singleArea">۰</strong> مترمربع
-            </span>
-            <span>
-              مساحت کل:
-              <strong id="totalArea">۰</strong> مترمربع
-            </span>
-          </div>
-
-          <button type="submit" class="btn primary submit">
-            ارسال استعلام به واتساپ
+        <div class="portfolio-content">
+          <h3>درب و پنجره UPVC</h3>
+          <button class="btn primary" onclick="openPortfolio('upvc')">
+            مشاهده نمونه‌کار
           </button>
-          <p class="note">
-            این فرم قیمت نهایی را محاسبه نمی‌کند؛ مبلغ نهایی باید پس از بررسی
-            نوع پروفیل، یراق‌آلات، شیشه و سایر مشخصات اعلام شود.
-          </p>
-        </form>
-      </div>
+        </div>
+      </article>
+
+      <article class="portfolio-card glass">
+        <img src="grok_1791751938860.jpg"
+          alt="درب و پنجره آلومینیوم ترمال بریک"
+          onerror="this.onerror=null;this.src='grok_1791751925348.jpg'">
+
+        <div class="portfolio-content">
+          <h3>درب و پنجره آلومینیوم ترمال بریک</h3>
+          <button class="btn primary" onclick="openPortfolio('thermal')">
+            مشاهده نمونه‌کار
+          </button>
+        </div>
+      </article>
+
+      <article class="portfolio-card glass">
+        <img src="grok_1791751925348.jpg"
+          alt="نمای شیشه‌ای"
+          onerror="this.onerror=null;this.src='grok_1791751923005.jpg'">
+
+        <div class="portfolio-content">
+          <h3>نمای شیشه‌ای</h3>
+          <button class="btn primary" onclick="openPortfolio('glass')">
+            مشاهده نمونه‌کار
+          </button>
+        </div>
+      </article>
+
+      <article class="portfolio-card glass">
+        <img src="grok_1791751923005.jpg"
+          alt="درب ضد سرقت"
+          onerror="this.onerror=null;this.src='grok_1791751943067.jpg'">
+
+        <div class="portfolio-content">
+          <h3>درب ضد سرقت</h3>
+          <button class="btn primary" onclick="openPortfolio('security')">
+            مشاهده نمونه‌کار
+          </button>
+        </div>
+      </article>
+
     </div>
-  </section>
+  </div>
+</section>
 
-  <section id="contact">
-    <div class="container">
-      <div class="section-head">
-        <h2>تماس با زاراوین</h2>
-        <p>برای ارتباط یا مشاهده موقعیت دفتر از راه‌های زیر استفاده کنید.</p>
+<!-- پنجره نمونه‌کار هر دسته -->
+<div class="modal" id="portfolioModal" role="dialog"
+  aria-modal="true" aria-labelledby="modalTitle">
+
+  <div class="modal-box">
+
+    <div class="modal-header">
+      <h2 id="modalTitle">نمونه‌کارها</h2>
+      <button class="close-btn" type="button" onclick="closePortfolio()">
+        بستن ✕
+      </button>
+    </div>
+
+    <div class="sample-grid" id="sampleGrid"></div>
+
+    <p class="sample-note">
+      برای هر کادر می‌توانی عکسی از گالری گوشی انتخاب کنی.
+      عکس‌های انتخاب‌شده در همین مرورگر ذخیره می‌شوند.
+    </p>
+
+  </div>
+</div>
+
+<!-- استعلام قیمت -->
+
+<section id="quote">
+  <div class="container">
+
+    <div class="section-title">
+      <h2>استعلام قیمت</h2>
+      <p>طول و عرض را وارد کن تا مشخصات سفارش برای واتساپ آماده شود.</p>
+    </div>
+
+    <div class="quote-grid">
+
+      <div class="quote-intro">
+        <h3>استعلام قیمت زاراوین</h3>
+        <p>
+          نوع محصول و ابعاد موردنظرت را وارد کن.
+          مساحت به‌صورت خودکار محاسبه می‌شود.
+          برای اعلام قیمت نهایی، مشخصات باید بررسی شوند.
+        </p>
+        <p>📞 ۰۹۱۷۷۶۳۸۴۳۳</p>
       </div>
 
-      <div class="contact-grid">
-        <div class="contact-card glass">
-          <h3>اطلاعات تماس</h3>
-          <p>📞 شماره تماس: <a href="tel:09177638433">۰۹۱۷۷۶۳۸۴۳۳</a></p>
-          <p>📍 آدرس: آزادگان ۱۶، دفتر درب و پنجره زاراوین</p>
-          <div class="actions">
-            <a class="btn primary" href="tel:09177638433">تماس تلفنی</a>
-            <a class="btn orange" href="https://wa.me/989177638433"
-              target="_blank" rel="noopener noreferrer">واتساپ</a>
+      <form class="quote-form glass" id="quoteForm">
+
+        <div class="form-grid">
+
+          <div class="field full">
+            <label for="product">نوع محصول</label>
+            <select id="product" required>
+              <option value="">انتخاب محصول</option>
+              <option>درب و پنجره UPVC</option>
+              <option>درب و پنجره آلومینیوم ترمال بریک</option>
+              <option>نمای شیشه‌ای</option>
+              <option>درب ضد سرقت</option>
+            </select>
           </div>
+
+          <div class="field">
+            <label for="width">عرض به سانتی‌متر</label>
+            <input id="width" type="number" min="1"
+              step="any" placeholder="مثلاً ۱۲۰" required>
+          </div>
+
+          <div class="field">
+            <label for="height">طول به سانتی‌متر</label>
+            <input id="height" type="number" min="1"
+              step="any" placeholder="مثلاً ۱۵۰" required>
+          </div>
+
+          <div class="field">
+            <label for="quantity">تعداد</label>
+            <input id="quantity" type="number" min="1"
+              step="1" value="1" required>
+          </div>
+
+          <div class="field">
+            <label for="customerName">نام مشتری</label>
+            <input id="customerName" type="text"
+              maxlength="80" placeholder="اختیاری">
+          </div>
+
+          <div class="field full">
+            <label for="details">توضیحات</label>
+            <textarea id="details" maxlength="1000"
+              placeholder="توضیحات سفارش، رنگ و نوع بازشو"></textarea>
+          </div>
+
         </div>
 
-        <div class="contact-card glass">
-          <h3>موقعیت مکانی</h3>
-          <p>برای مسیریابی از نقشه استفاده کنید.</p>
-          <iframe class="map-frame"
-            title="موقعیت دفتر زاراوین در گوگل مپ"
-            src="https://maps.google.com/maps?q=27.1936463,56.3059328&z=16&output=embed"
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade">
-          </iframe>
-          <div class="map-actions">
-            <a class="btn primary"
-              href="https://www.google.com/maps?q=27.1936463,56.3059328"
-              target="_blank" rel="noopener noreferrer">گوگل مپ</a>
-            <a class="btn orange"
-              href="https://neshan.org/maps?lat=27.1936463&lng=56.3059328&zoom=16"
-              target="_blank" rel="noopener noreferrer">نشان</a>
-          </div>
+        <div class="area-box">
+          <span>مساحت هر واحد: <strong id="singleArea">۰</strong> مترمربع</span>
+          <span>مساحت کل: <strong id="totalArea">۰</strong> مترمربع</span>
+        </div>
+
+        <button class="btn primary submit" type="submit">
+          ارسال استعلام به واتساپ
+        </button>
+
+        <p class="note">
+          این فرم مساحت را محاسبه می‌کند، نه قیمت نهایی محصول را.
+        </p>
+
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- تماس و نقشه -->
+
+<section id="contact">
+  <div class="container">
+
+    <div class="section-title">
+      <h2>تماس با زاراوین</h2>
+    </div>
+
+    <div class="contact-grid">
+
+      <div class="contact-card glass">
+        <h3>اطلاعات تماس</h3>
+
+        <p>
+          شماره تماس:
+          <a href="tel:09177638433">۰۹۱۷۷۶۳۸۴۳۳</a>
+        </p>
+
+        <p>آدرس: آزادگان ۱۶، دفتر درب و پنجره زاراوین</p>
+
+        <div class="actions">
+          <a class="btn primary" href="tel:09177638433">تماس تلفنی</a>
+
+          <a class="btn orange"
+            href="https://wa.me/989177638433"
+            target="_blank" rel="noopener noreferrer">
+            واتساپ
+          </a>
         </div>
       </div>
+
+      <div class="contact-card glass">
+        <h3>موقعیت مکانی</h3>
+
+        <iframe class="map-frame"
+          title="موقعیت دفتر زاراوین"
+          src="https://maps.google.com/maps?q=27.1936463,56.3059328&z=16&output=embed"
+          loading="lazy">
+        </iframe>
+
+        <div class="map-actions">
+          <a class="btn primary"
+            href="https://www.google.com/maps?q=27.1936463,56.3059328"
+            target="_blank" rel="noopener noreferrer">
+            گوگل مپ
+          </a>
+
+          <a class="btn orange"
+            href="https://neshan.org/maps?lat=27.1936463&lng=56.3059328&zoom=16"
+            target="_blank" rel="noopener noreferrer">
+            نشان
+          </a>
+        </div>
+      </div>
+
     </div>
-  </section>
+  </div>
+</section>
+
 </main>
 
 <footer>
   <div class="container">
-    <div class="logo">زاراوین <span>ZARAWIN</span></div>
-    <p>درب و پنجره زاراوین | کیفیت و زیبایی در انتخاب شما</p>
+    <div class="logo" style="color:white">
+      زاراوین <span>ZARAWIN</span>
+    </div>
+    <p>درب و پنجره زاراوین</p>
     <p>تلفن: ۰۹۱۷۷۶۳۸۴۳۳</p>
-    <p>© تمامی حقوق برای درب و پنجره زاراوین محفوظ است.</p>
   </div>
 </footer>
 
 <a class="whatsapp-float"
   href="https://wa.me/989177638433"
-  target="_blank" rel="noopener noreferrer">واتساپ ✆</a>
+  target="_blank" rel="noopener noreferrer">
+  واتساپ ✆
+</a>
 
 <script>
+/* منوی موبایل */
+
 const menuBtn = document.getElementById("menuBtn");
 const mainNav = document.getElementById("mainNav");
 
 menuBtn.addEventListener("click", () => {
-  const opened = mainNav.classList.toggle("open");
-  menuBtn.setAttribute("aria-expanded", String(opened));
+  mainNav.classList.toggle("open");
 });
 
 mainNav.querySelectorAll("a").forEach(link => {
   link.addEventListener("click", () => {
     mainNav.classList.remove("open");
-    menuBtn.setAttribute("aria-expanded", "false");
   });
 });
+
+/* نمونه‌کارها: چهار دسته، هر دسته ۱۵ جای عکس */
+
+const categories = {
+  upvc: "درب و پنجره UPVC",
+  thermal: "درب و پنجره آلومینیوم ترمال بریک",
+  glass: "نمای شیشه‌ای",
+  security: "درب ضد سرقت"
+};
+
+let currentCategory = "";
+
+const modal = document.getElementById("portfolioModal");
+const sampleGrid = document.getElementById("sampleGrid");
+const modalTitle = document.getElementById("modalTitle");
+
+function storageKey(category, slot) {
+  return "zarawin_" + category + "_" + slot;
+}
+
+function openPortfolio(category) {
+  currentCategory = category;
+  modalTitle.textContent = categories[category];
+  sampleGrid.innerHTML = "";
+
+  for (let i = 1; i <= 15; i++) {
+    const slot = document.createElement("div");
+    slot.className = "sample-slot";
+
+    const savedImage = localStorage.getItem(
+      storageKey(category, i)
+    );
+
+    if (savedImage) {
+      showSavedImage(slot, savedImage, i, category);
+    } else {
+      showUploadButton(slot, i, category);
+    }
+
+    sampleGrid.appendChild(slot);
+  }
+
+  modal.classList.add("show");
+  document.body.style.overflow = "hidden";
+}
+
+function showUploadButton(slot, index, category) {
+  slot.innerHTML = "";
+
+  const label = document.createElement("label");
+  label.className = "upload-label";
+
+  const plus = document.createElement("b");
+  plus.textContent = "+";
+
+  const text = document.createElement("span");
+  text.textContent = "افزودن عکس " + index;
+
+  const input = document.createElement("input");
+  input.type = "file";
+  input.accept = "image/*";
+
+  input.addEventListener("change", () => {
+    const file = input.files[0];
+    if (!file) return;
+
+    if (!file.type.startsWith("image/")) {
+      alert("لطفاً یک فایل تصویری انتخاب کن.");
+      return;
+    }
+
+    if (file.size > 3 * 1024 * 1024) {
+      alert("حجم عکس باید کمتر از ۳ مگابایت باشد.");
+      return;
+    }
+
+    const reader = new FileReader();
+
+    reader.onload = event => {
+      const imageData = event.target.result;
+
+      try {
+        localStorage.setItem(
+          storageKey(category, index),
+          imageData
+        );
+
+        showSavedImage(slot, imageData, index, category);
+
+      } catch (error) {
+        alert("فضای ذخیره مرورگر کافی نیست. عکس کوچک‌تری انتخاب کن.");
+      }
+    };
+
+    reader.readAsDataURL(file);
+  });
+
+  label.append(plus, text, input);
+  slot.appendChild(label);
+}
+
+function showSavedImage(slot, imageData, index, category) {
+  slot.innerHTML = "";
+
+  const image = document.createElement("img");
+  image.src = imageData;
+  image.alt = "نمونه‌کار " + index;
+
+  const remove = document.createElement("button");
+  remove.className = "remove-image";
+  remove.type = "button";
+  remove.textContent = "حذف عکس";
+
+  remove.addEventListener("click", () => {
+    if (!confirm("این عکس حذف شود؟")) return;
+
+    localStorage.removeItem(storageKey(category, index));
+    showUploadButton(slot, index, category);
+  });
+
+  slot.append(image, remove);
+}
+
+function closePortfolio() {
+  modal.classList.remove("show");
+  document.body.style.overflow = "";
+}
+
+modal.addEventListener("click", event => {
+  if (event.target === modal) {
+    closePortfolio();
+  }
+});
+
+document.addEventListener("keydown", event => {
+  if (event.key === "Escape") {
+    closePortfolio();
+  }
+});
+
+/* محاسبه مساحت */
 
 const widthInput = document.getElementById("width");
 const heightInput = document.getElementById("height");
 const quantityInput = document.getElementById("quantity");
+
 const singleArea = document.getElementById("singleArea");
 const totalArea = document.getElementById("totalArea");
 
-const persianDigits = value =>
-  String(value).replace(/\d/g, digit => "۰۱۲۳۴۵۶۷۸۹"[digit]);
+function persianDigits(value) {
+  return String(value).replace(
+    /\d/g,
+    digit => "۰۱۲۳۴۵۶۷۸۹"[digit]
+  );
+}
 
-function getArea() {
+function calculateArea() {
   const width = Number(widthInput.value);
   const height = Number(heightInput.value);
   const quantity = Number(quantityInput.value);
 
-  const valid = width > 0 && height > 0 &&
-    quantity > 0 && Number.isFinite(width) &&
-    Number.isFinite(height) && Number.isFinite(quantity);
+  const valid =
+    width > 0 &&
+    height > 0 &&
+    quantity > 0 &&
+    Number.isInteger(quantity);
 
-  const one = valid ? (width * height) / 10000 : 0;
+  const one = valid ? width * height / 10000 : 0;
   const total = one * (valid ? quantity : 0);
 
-  singleArea.textContent = persianDigits(one.toLocaleString("en-US", {
-    maximumFractionDigits: 3
-  }));
-  totalArea.textContent = persianDigits(total.toLocaleString("en-US", {
-    maximumFractionDigits: 3
-  }));
+  singleArea.textContent = persianDigits(
+    one.toLocaleString("en-US", {
+      maximumFractionDigits: 3
+    })
+  );
 
-  return { width, height, quantity, one, total, valid };
+  totalArea.textContent = persianDigits(
+    total.toLocaleString("en-US", {
+      maximumFractionDigits: 3
+    })
+  );
+
+  return {width, height, quantity, one, total, valid};
 }
 
 [widthInput, heightInput, quantityInput].forEach(input => {
-  input.addEventListener("input", getArea);
+  input.addEventListener("input", calculateArea);
 });
 
-document.getElementById("quoteForm").addEventListener("submit", event => {
-  event.preventDefault();
+/* ارسال درخواست استعلام به واتساپ */
 
-  const area = getArea();
+document.getElementById("quoteForm").addEventListener(
+  "submit",
+  event => {
+    event.preventDefault();
 
-  if (!area.valid) {
-    alert("لطفاً عرض، طول و تعداد معتبر وارد کنید.");
-    return;
+    const result = calculateArea();
+
+    if (!result.valid) {
+      alert("لطفاً عرض، طول و تعداد معتبر وارد کن.");
+      return;
+    }
+
+    const product = document.getElementById("product").value;
+    const name = document.getElementById("customerName").value.trim();
+    const details = document.getElementById("details").value.trim();
+
+    const message = [
+      "سلام، برای محصول زیر از زاراوین استعلام قیمت دارم.",
+      "",
+      "نوع محصول: " + product,
+      "عرض: " + result.width + " سانتی‌متر",
+      "طول: " + result.height + " سانتی‌متر",
+      "تعداد: " + result.quantity,
+      "مساحت هر واحد: " + result.one.toFixed(3) + " مترمربع",
+      "مساحت کل: " + result.total.toFixed(3) + " مترمربع",
+      name ? "نام مشتری: " + name : "",
+      details ? "توضیحات: " + details : ""
+    ].filter(Boolean).join("\n");
+
+    const url =
+      "https://wa.me/989177638433?text=" +
+      encodeURIComponent(message);
+
+    window.open(url, "_blank");
   }
+);
 
-  if (!Number.isInteger(area.quantity)) {
-    alert("تعداد باید یک عدد صحیح باشد.");
-    return;
-  }
-
-  const product = document.getElementById("product").value;
-  const name = document.getElementById("customerName").value.trim();
-  const details = document.getElementById("details").value.trim();
-
-  const message = [
-    "سلام، درخواست استعلام قیمت از سایت زاراوین دارم.",
-    "",
-    "نوع محصول: " + product,
-    "عرض: " + area.width + " سانتی‌متر",
-    "طول / ارتفاع: " + area.height + " سانتی‌متر",
-    "تعداد: " + area.quantity,
-    "مساحت هر واحد: " + area.one.toFixed(3) + " مترمربع",
-    "مساحت کل: " + area.total.toFixed(3) + " مترمربع",
-    name ? "نام مشتری: " + name : "",
-    details ? "توضیحات: " + details : ""
-  ].filter(Boolean).join("\n");
-
-  const whatsappURL =
-    "https://wa.me/989177638433?text=" + encodeURIComponent(message);
-
-  window.open(whatsappURL, "_blank", "noopener,noreferrer");
-});
-
-getArea();
+calculateArea();
 </script>
 
 </body>
-</html>
+  </html>
